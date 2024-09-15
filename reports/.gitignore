@@ -1,0 +1,26 @@
+# IDE Files
+#-------------------------
+.DS_Store
+sftp-config.json
+sftp.json
+*.code-workspace
+.vscode
+.vs
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+*.map
+
+# Project Files
+#-------------------------
+.sass-cache
+*.log
+*.zip
+
+# Nodes
+#-------------------------
+node_modules
+package-lock.json
+public

@@ -1,0 +1,82 @@
+/* view_properties.css */
+body {
+    background-color: #343a40; /* Dark background color */
+    color: #e9ecef; /* Light text color for better contrast */
+}
+
+.navbar {
+    background-color: #007bff; /* Primary navbar color */
+}
+
+.navbar-brand {
+    color: #ffffff; /* Navbar brand color */
+}
+
+.navbar-brand:hover {
+    color: #e3f2fd; /* Navbar brand hover color */
+}
+
+.table {
+    color: #e9ecef; /* Light text color in table */
+}
+
+.table thead th {
+    color: #cccccc; /* Header color for better visibility */
+    background-color: #495057; /* Header background color */
+}
+
+.table tbody tr:hover {
+    background-color: #6c757d; /* Table row hover background color */
+}
+
+.btn-light {
+    color: #000; /* Button text color */
+    background-color: #f8f9fa; /* Button background color */
+}
+
+.btn-light:hover {
+    color: #000; /* Button text color on hover */
+    background-color: #e2e6ea; /* Button background color on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card {
+    background-color: #495057; /* Card background color */
+    border: none; /* Remove card border */
+    border-radius: 0.25rem; /* Rounded corners for card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow effect */
+}
+
+.card-header {
+    background-color: #6c757d; /* Card header background color */
+}
+
+canvas {
+    max-width: 100%;
+}
+
+.chart-container {
+    position: relative;
+    height: 60vh; /* Increase the height for better visibility */
+    width: 800px !important;
+    margin-bottom: 20px; /* Space between charts */
+}
+
+#controls {
+    width: 200px; /* Adjust the width of the control panel */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 576px) {
+    .table {
+        font-size: 0.875rem; /* Smaller font size on small screens */
+    }
+
+    .chart-container {
+        height: 40vh; /* Reduce chart height on small screens */
+    }
+
+    #controls {
+        width: 100%; /* Full width for controls on small screens */
+    }
+}

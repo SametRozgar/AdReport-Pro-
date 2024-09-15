@@ -1,0 +1,119 @@
+[29-Aug-2024 17:47:37 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/graph-system/add_property.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/graph-system/add_property.php on line 57
+[30-Aug-2024 12:04:40 Europe/Istanbul] PHP Warning:  Undefined array key "brandId" in /home/exenonli1/public_html/graph-system/view_properties.php on line 4
+[30-Aug-2024 12:51:55 Europe/Istanbul] PHP Parse error:  syntax error, unexpected token ";", expecting "]" in /home/exenonli1/public_html/graph-system/view_properties.php on line 42
+[30-Aug-2024 12:51:55 Europe/Istanbul] PHP Parse error:  syntax error, unexpected token ";", expecting "]" in /home/exenonli1/public_html/graph-system/view_properties.php on line 42
+[30-Aug-2024 12:51:55 Europe/Istanbul] PHP Parse error:  syntax error, unexpected token ";", expecting "]" in /home/exenonli1/public_html/graph-system/view_properties.php on line 42
+[04-Sep-2024 11:27:32 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(65): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '5', '4', '515', '1435', '1', '351', '1528', '15', '12', '1', '21', '210', '51', '64514', '341341', '641564')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65
+[04-Sep-2024 11:29:58 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '132', '451', '351', '351', '351', '35', '13', '51', '351', '351', '35', '13', '51', '351', '35', '13')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 11:30:30 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '351', '35', '135', '135', '1', '351', '351', '35', '135', '13', '51', '351', '35', '135', '135', '1')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 11:33:02 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '65', '156', '651651', '615', '165', '156', '1516', '61', '1661', '615', '615', '6161', '66', '15651', '165', '165')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 11:35:34 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '55', '51513', '513', '153', '153', '351', '351315', '135', '351', '531', '135', '135', '13', '31315', '315', '135')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:45:01 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '12', '351', '35', '135', '135', '13', '51', '351', '351', '351', '35', '135', '13', '513', '51', '35')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:45:32 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', '\xC5\x9Eubat', '2024', '35', '135', '13', '51', '351', '351', '351', '351', '351', '351', '351', '351', '35', '135', '135', '1')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:46:08 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', '\xC5\x9Eubat', '2024', '13', '231', '321132', '321', '3212313', '1232', '23112', '123', '312213', '312', '12132', '321', '312312', '312', '312', '312')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:48:26 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '1513', '51', '3', '513', '513', '51', '35135135135', '135', '13', '51', '35', '135', '13', '51351', '3135', '1533')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:49:24 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Nisan', '2024', '354', '135', '13', '51', '351', '351', '35', '135', '135', '1', '351', '351', '1', '31', '35', '13')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:51:31 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:64
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(64): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Nisan', '2024', '51', '51', '351', '35', '135', '135', '13', '51', '351', '351', '351', '35', '135', '135', '351', '3')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 64
+[04-Sep-2024 11:58:34 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '3', '513', '51', '351', '351351351351', '351', '35', '153', '53135', '1351', '315', '315351', '351', '315', '3', '135')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 12:06:02 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:79
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(79): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Ocak', '2024', '1', '351', '35', '135', '15', '51', '153', '56165', '1', '31135', '31', '351531135', '351', '5165', '13', '13')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 79
+[04-Sep-2024 12:10:27 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Mart', '2024', '3521', '351', '351', '351', '351', '351', '35', '13', '5135', '135', '51', '35', '135', '13', '135', '1')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 12:11:15 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Mart', '2024', '35', '135', '135', '13', '513', '51', '351', '351', '351', '351', '351', '35', '135', '135', '35', '13')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[04-Sep-2024 12:11:29 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/exenonli1/public_html/reports/add_property.php:63
+Stack trace:
+#0 /home/exenonli1/public_html/reports/add_property.php(63): mysqli_stmt->bind_param('siiiiiiiiiiiiii...', 'Mart', '2024', '23131351351', '351', '351', '351', '351', '315135', '351', '351', '351', '135', '351', '315', '351', '351', '351', '513315')
+#1 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 63
+[13-Sep-2024 12:01:20 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65
+[13-Sep-2024 12:01:47 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65
+[13-Sep-2024 12:03:17 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "organikGelir" in /home/exenonli1/public_html/reports/add_property.php on line 15
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "satilanUrunAdedi" in /home/exenonli1/public_html/reports/add_property.php on line 16
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "siparisSayisi" in /home/exenonli1/public_html/reports/add_property.php on line 17
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "organikZiyaretci" in /home/exenonli1/public_html/reports/add_property.php on line 18
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "metaZiyaretci" in /home/exenonli1/public_html/reports/add_property.php on line 19
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "googleZiyaretci" in /home/exenonli1/public_html/reports/add_property.php on line 20
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Warning:  Undefined array key "tiktokZiyaretci" in /home/exenonli1/public_html/reports/add_property.php on line 21
+[13-Sep-2024 12:12:27 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:39
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 39
+[13-Sep-2024 12:32:01 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65
+[13-Sep-2024 12:32:05 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/exenonli1/public_html/reports/add_property.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/exenonli1/public_html/reports/add_property.php on line 65

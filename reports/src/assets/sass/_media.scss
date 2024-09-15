@@ -1,0 +1,143 @@
+// computer
+@media screen and (min-width: $screen-sm-min) {
+	.sidebar {
+        width: 100% !important;
+    }
+}
+
+// tablet and mobile screen sizes
+@media screen and (max-width: $screen-sm-max) {
+    /* collapsed sidebar */
+    .grid-wrapper {
+        grid-template-columns: auto;
+        grid-template-areas: "header" "main" "footer";
+    }
+
+    .toggle-sidebar-btn {
+        display: none;
+    }
+
+    .slide-sidebar-btn {
+        display: inline-block !important;
+    }
+
+    .header .header-bar {
+        grid-template-columns: 50px 1fr;
+        grid-auto-rows: $header-height;
+
+        .brand {
+            grid-column: 2/3 !important;
+            grid-row: 1;
+        }
+
+        .btn-toggle {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .navigation {
+            // display: none;
+
+            > .navbar-search {
+                display: none;
+            }
+        }
+    }
+
+    /* slide-sidebar */
+    .sidebar {
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        height: 100%;
+        width: 0; // toggle with javascript
+        border-radius: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: $zindex-sidebar-slide;
+        @include transition(all 0.3s ease);
+
+        .sidebar-menu {
+            .header-menu {
+                font-size: 18px !important;
+            }
+
+            ul li,
+            ul li a {
+                font-size: 16px;
+
+                i {
+                    margin-right: 14px;
+                }
+            }
+        }
+
+        &.open {
+            width: 40%;
+        }
+    }
+
+    .main {
+        padding-left: 16px !important;
+        border-radius: $main-body-radius;
+    }
+}
+
+// mobile screen sizes
+@media screen and (max-width: $screen-xs-max) {
+    .grid-wrapper {
+        margin: 0;
+    }
+
+    .header {
+        width: 100vw;
+
+        .brand {
+            text-align: center;
+            
+            a.logo {
+                display: none;
+            }
+
+            a.logo-sm {
+                display: inline-block !important;
+                font-weight: 700;
+            }
+        }
+
+        .btn-toggle {
+            margin-left: 20px;
+        }
+
+        .navbar-menu .menu-item>.dropdown-menu {
+            width: 100vw;
+            left: -5px !important;
+        }
+    }
+
+    .sidebar {
+        padding-bottom: 7rem;
+
+        &.open {
+            width: 100vw;
+        }
+    }
+
+    .main {
+        width: 100vw;
+        margin-right: -40px;
+        padding-left: 0;
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    #sidebar-right {
+        padding-bottom: 7rem;
+
+        &.sidebar-open {
+            right: 0;
+            width: 100%;
+            box-shadow: none;
+        }
+    }
+}

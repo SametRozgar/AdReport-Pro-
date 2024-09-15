@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>View Properties</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .table {
+            background-color: black;
+        }
+
+        .navbar {
+            background-color: #E34C4C;
+        }
+
+        .brand-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .brand-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-info h4 {
+            margin-right: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            margin-top: 20px;
+        }
+
+        #chartType {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Properties</a>
+        <button class="btn btn-light ml-auto" onclick="window.history.back();">Back</button>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="brand-info">
+            <h4>Properties for Brand ID: <span id="brandId"></span></h4>
+            <img id="brandLogo" class="brand-logo" alt="Brand Logo">
+        </div>
+
+        <!-- Table for displaying properties -->
+        <table class="table table-bordered table-dark mt-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ay</th>
+                    <th>Yıl</th>
+                    <th>Reklam Bütçesi</th>
+                    <th>Reklam Geliri</th>
+                    <th>Toplam Gelir</th>
+                    <th>Organik Gelir</th>
+                    <th>Reklam İade Tutarı</th>
+                    <th>Reklam Harcama Getiri</th>
+                </tr>
+            </thead>
+            <tbody id="propertiesTableBody">
+                <!-- Properties will be inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Grafikler ve gezinti butonları burada tanımlanıyor -->
+        <div class="all_graphs">
+            <div class="chart-container">
+                <canvas id="areaChart1"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="areaChart2"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="areaChart3"></canvas>
+            </div>
+
+            <!-- Buttons for navigating between charts -->
+            <div class="text-center mt-3">
+                <button id="prevChart" class="btn btn-primary">← Önceki Grafik</button>
+                <button id="nextChart" class="btn btn-primary">Sonraki Grafik →</button>
+                <div id="chartType" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const brandId = urlParams.get('brandId');
+            document.getElementById('brandId').textContent = brandId;
+
+            if (brandId) {
+                fetch(`view_properties.php?brandId=${brandId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const propertiesTableBody = document.getElementById('propertiesTableBody');
+                        propertiesTableBody.innerHTML = '';
+
+                        const labels = [];
+                        const advertisingBudgets = [];
+                        const advertisingRevenues = [];
+                        const totalRevenues = [];
+                        const organicRevenues = [];
+                        const advertisingReturnAmounts = [];
+
+                        if (Array.isArray(data.properties) && data.properties.length > 0) {
+                            data.properties.forEach(property => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${property.id}</td>
+                                    <td>${property.month}</td>
+                                    <td>${property.year}</td>
+                                    <td>${property.advertising_budget}</td>
+                                    <td>${property.advertising_revenue}</td>
+                                    <td>${property.total_revenue}</td>
+                                    <td>${property.organic_revenue}</td>
+                                    <td>${property.advertising_return_amount}</td>
+                                    <td>${property.return_on_ad_spend}</td>
+                                `;
+                                propertiesTableBody.appendChild(row);
+
+                                labels.push(`${property.month} ${property.year}`);
+                                advertisingBudgets.push(parseFloat(property.advertising_budget.replace(/[.,]/g, '')) || 0);
+                                advertisingRevenues.push(parseFloat(property.advertising_revenue.replace(/[.,]/g, '')) || 0);
+                                totalRevenues.push(parseFloat(property.total_revenue.replace(/[.,]/g, '')) || 0);
+                                organicRevenues.push(parseFloat(property.organic_revenue.replace(/[.,]/g, '')) || 0);
+                                advertisingReturnAmounts.push(parseFloat(property.advertising_return_amount.replace(/[.,]/g, '')) || 0);
+                            });
+
+                            // Markanın logosunu ve adını göster
+                            document.getElementById('brandLogo').src = `./uploads/${data.brandLogo}`;
+
+                            // Minimum ve maksimum değerleri hesapla
+                            const minReturnAmount = Math.min(...advertisingReturnAmounts);
+                            const maxReturnAmount = Math.max(...advertisingReturnAmounts);
+
+                            // İlk grafik: Reklam Bütçesi ve Organik Gelir
+                            const ctx1 = document.getElementById('areaChart1').getContext('2d');
+                            const areaChart1 = new Chart(ctx1, {
+                                type: 'line',
+                                data: {
+                                    labels: labels,
+                                    datasets: [
+                                        {
+                                            label: 'Reklam Bütçesi',
+                                            data: advertisingBudgets,
+                                            borderColor: 'rgba(255, 99, 132, 1)',
+                                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                            fill: true,
+                                            tension: 0.4,
+                                        },
+                                        {
+                                            label: 'Organik Gelir',
+                                            data: organicRevenues,
+                                            borderColor: 'rgba(153, 102, 255, 1)',
+                                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                                            fill: true,
+                                            tension: 0.4,
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: 'Month & Year',
+                                                color: 'white'
+                                            },
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        },
+                                        y: {
+                                            title: {
+                                                display: true,
+                                                text: 'Value',
+                                                color: 'white'
+                                            },
+                                            beginAtZero: true,
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        }
+                                    },
+                                    plugins: {
+                                        tooltip: {
+                                            mode: 'index',
+                                            intersect: false
+                                        },
+                                        legend: {
+                                            labels: {
+                                                color: 'white'
+                                            }
+                                        }
+                                    },
+                                    interaction: {
+                                        mode: 'index',
+                                        intersect: false
+                                    }
+                                }
+                            });
+
+                            // İkinci grafik: Reklam Geliri ve Toplam Gelir
+                            const ctx2 = document.getElementById('areaChart2').getContext('2d');
+                            const areaChart2 = new Chart(ctx2, {
+                                type: 'line',
+                                data: {
+                                    labels: labels,
+                                    datasets: [
+                                        {
+                                            label: 'Reklam Geliri',
+                                            data: advertisingRevenues,
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            fill: true,
+                                            tension: 0.4,
+                                        },
+                                        {
+                                            label: 'Toplam Gelir',
+                                            data: totalRevenues,
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                            fill: true,
+                                            tension: 0.4,
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: 'Month & Year',
+                                                color: 'white'
+                                            },
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        },
+                                        y: {
+                                            title: {
+                                                display: true,
+                                                text: 'Value',
+                                                color: 'white'
+                                            },
+                                            beginAtZero: true,
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        }
+                                    },
+                                    plugins: {
+                                        tooltip: {
+                                            mode: 'index',
+                                            intersect: false
+                                        },
+                                        legend: {
+                                            labels: {
+                                                color: 'white'
+                                            }
+                                        }
+                                    },
+                                    interaction: {
+                                        mode: 'index',
+                                        intersect: false
+                                    }
+                                }
+                            });
+
+                            // Üçüncü grafik: Reklam İade Tutarı (Dinamik Y ekseni)
+                            const ctx3 = document.getElementById('areaChart3').getContext('2d');
+                            const areaChart3 = new Chart(ctx3, {
+                                type: 'line',
+                                data: {
+                                    labels: labels,
+                                    datasets: [
+                                        {
+                                            label: 'Reklam İade Tutarı',
+                                            data: advertisingReturnAmounts,
+                                            borderColor: 'rgba(255, 159, 64, 1)',
+                                            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                                            fill: true,
+                                            tension: 0.4,
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: 'Month & Year',
+                                                color: 'white'
+                                            },
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        },
+                                        y: {
+                                            title: {
+                                                display: true,
+                                                text: 'Value',
+                                                color: 'white'
+                                            },
+                                            min: minReturnAmount * 0.9,
+                                            max: maxReturnAmount * 1.1,
+                                            ticks: {
+                                                color: 'white'
+                                            },
+                                            grid: {
+                                                color: '#909090'
+                                            }
+                                        }
+                                    },
+                                    plugins: {
+                                        tooltip: {
+                                            mode: 'index',
+                                            intersect: false
+                                        },
+                                        legend: {
+                                            labels: {
+                                                color: 'white'
+                                            }
+                                        }
+                                    },
+                                    interaction: {
+                                        mode: 'index',
+                                        intersect: false
+                                    }
+                                }
+                            });
+
+                            // Grafik kontrolü için değişkenler
+                            const charts = [areaChart1, areaChart2, areaChart3];
+                            let currentChartIndex = 0;
+                            const chartTypeElement = document.getElementById('chartType');
+
+                            function showChart(index) {
+                                charts.forEach((chart, i) => {
+                                    chart.canvas.parentNode.style.display = i === index ? 'block' : 'none';
+                                });
+                                chartTypeElement.textContent = `Grafik ${index + 1}`;
+                            }
+
+                            document.getElementById('prevChart').addEventListener('click', () => {
+                                currentChartIndex = (currentChartIndex - 1 + charts.length) % charts.length;
+                                showChart(currentChartIndex);
+                            });
+
+                            document.getElementById('nextChart').addEventListener('click', () => {
+                                currentChartIndex = (currentChartIndex + 1) % charts.length;
+                                showChart(currentChartIndex);
+                            });
+
+                            showChart(currentChartIndex);
+
+                        } else {
+                            propertiesTableBody.innerHTML = '<tr><td colspan="9">No properties found</td></tr>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch Error:', error);
+                        document.getElementById('propertiesTableBody').innerHTML = '<tr><td colspan="9">Error fetching data</td></tr>';
+                    });
+            } else {
+                console.error('No brandId provided');
+                document.getElementById('propertiesTableBody').innerHTML = '<tr><td colspan="9">No brandId provided</td></tr>';
+            }
+        });
+    </script>
+</body>
+
+</html>

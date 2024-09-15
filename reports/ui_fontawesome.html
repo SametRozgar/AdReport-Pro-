@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Fee Bootstrap Admin Theme with Webpack and Laravel-Mix" />
+    <meta name="keywords" content="bootstrap, admin theme, admin dashboard, jquery, webpack, laravel-mix, template, responsive" />
+    <meta name="author" content="siQuang - Simon Nguyen" />
+
+    <title>siQtheme - Fontawesome</title>
+
+    <link rel="stylesheet" href="assets/css/siqtheme.css">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+</head>
+
+<body class="theme-dark">
+    <div class="grid-wrapper sidebar-bg bg1">
+
+        <!-- BOF HEADER -->
+        <div class="header">
+            <div class="header-bar">
+                <div class="brand">
+                    <a href="index.html" class="logo"><span class="text-carolina">siQ</span>theme</a>
+                    <a href="index.html" class="logo-sm text-carolina" style="display: none;">siQ</a>
+                </div>
+                <div class="btn-toggle">
+                    <!-- <a href="#" class="toggle-sidebar-btn"><i class="ti-arrow-circle-left"></i></a> -->
+                    <a href="#" class="slide-sidebar-btn" style="display: none;"><i class="ti-menu"></i></a>
+                </div>
+                <div class="navigation d-flex">
+
+                    <!-- BOF Header Search -->
+                    <form class="navbar-search" role="search" method="post" action="#">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="ti-search"></i></div>
+                            </div>
+                            <input type="text" placeholder="Search for keywords" class="form-control" name="top-search"
+                                id="top-search">
+                        </div>
+                    </form>
+                    <!-- EOF Header Search -->
+
+                    <!-- BOF Header Nav -->
+                    <div class="navbar-menu d-flex">
+                        <div class="menu-item">
+                            <a href="#" class="btn" data-toggle="dropdown">
+                                <i class="ti-bell"></i>
+                                <span class="badge badge-pill badge-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-alert">
+                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comment-alt"></i> View
+                                        All Alerts <i class="ti-angle-right"></i></a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> New user registered <span>Just now</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-calendar-plus-o"></i> New event created <span>5 min
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-area-chart"></i> Report ready to download <span>1 day
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-bank"></i> Bill payment reminder <span>1 day
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-clock-o"></i> Staff meeting <span>3 days ago</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="btn" data-toggle="dropdown">
+                                <i class="ti-email"></i>
+                                <span class="badge badge-pill badge-success">7</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-message">
+                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comments"></i> View All
+                                        Messages <i class="ti-angle-right"></i></a></li>
+                                <li>
+                                    <img src="assets/img/profile/profile-04.jpg">
+                                    <div class="message-row">
+                                        <small>24h ago</small>
+                                        <a href="#"><span class="message-user">Pear Appleton</span><br>
+                                            Staff meeting on Tuesday at 4PM, remember to set date</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-07.jpg">
+                                    <div class="message-row">
+                                        <small>2h ago</small>
+                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
+                                            RE: Remember to generate PNL for October</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-06.jpg">
+                                    <div class="message-row">
+                                        <small>3d ago</small>
+                                        <a href="#"><span class="message-user">Lemony Tang</span><br>
+                                            Appointment with lawyer, better call Saul!</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-07.jpg">
+                                    <div class="message-row">
+                                        <small>4d ago</small>
+                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
+                                            Theme designed by siQuang for siQthemes</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="btn right-sidebar-toggle"><i class="ti-user"></i></a>
+                        </div>
+                    </div>
+                    <!-- EOF Header Nav -->
+
+                </div>
+            </div>
+        </div>
+        <!-- EOF HEADER -->
+
+        <!-- BOF ASIDE-LEFT -->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-content">
+                <!-- sidebar-menu  -->
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            Categories
+                        </li>
+                        <li class="">
+                            <a href="index.html">
+                                <i class="ti-dashboard"></i>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="maincat ">
+                            <a href="#">
+                                <i class="ti-plug"></i>
+                                <span class="menu-text">Components</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="cp_datetime.html">Date & Time</a>
+                                    </li>
+                                    <li >
+                                        <a href="cp_bstoggle.html">Bootstrap Toggle</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="maincat active">
+                            <a href="#">
+                                <i class="ti-palette"></i>
+                                <span class="menu-text">UI Elements</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="ui_typography.html">Typography</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_colors.html">Colors</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="ui_fontawesome.html">Fontawesome Icons</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_themify.html">Themify Icons</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_buttons.html">Buttons</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_cards.html">Cards</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_modals.html">Modals</a>
+                                    </li>
+                                    <li >
+                                        <a href="ui_toastr.html">Toastr Notifications</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="maincat ">
+                            <a href="#">
+                                <i class="ti-layout-grid2"></i>
+                                <span class="menu-text">Tables</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="tb_basic.html">Basic Tables</a>
+                                    </li>
+                                    <li >
+                                        <a href="tb_datatables.html">Datatables</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="maincat ">
+                            <a href="#">
+                                <i class="ti-write"></i>
+                                <span class="menu-text">Forms</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="fm_control.html">Form Control</a>
+                                    </li>
+                                    <li class="tier1 ">
+                                        <a href="#"><span class="menu-text">CKEditor</span></a>
+                                        <div class="subcat">
+                                            <ul>
+                                                <li >
+                                                    <a href="fm_ckeditor_inline.html">Inline</a>
+                                                </li>
+                                                <li >
+                                                    <a href="fm_ckeditor_classic.html">Classic</a>
+                                                </li>
+                                                <li >
+                                                    <a href="fm_ckeditor_balloon.html">Balloon</a>
+                                                </li>
+                                                <li >
+                                                    <a href="fm_ckeditor_block.html">Balloon Block</a>
+                                                </li>
+                                                <li >
+                                                    <a href="fm_ckeditor_document.html">Document</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="maincat ">
+                            <a href="#">
+                                <i class="ti-bar-chart"></i>
+                                <span class="menu-text">Charts</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="ch_apexcharts.html">Apex Charts</a>
+                                    </li>
+                                    <li >
+                                        <a href="javascript:;">amCharts</a>
+                                    </li>
+                                    <li >
+                                        <a href="javascript:;">Morris Charts</a>
+                                    </li>
+                                    <li >
+                                        <a href="javascript:;">Flot Charts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu">
+                            Extra
+                        </li>
+                        <li class="maincat ">
+                            <a href="#">
+                                <i class="ti-file"></i>
+                                <span class="menu-text">Pages</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li >
+                                        <a href="pg_login.html" target="_blank">Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="maincat">
+                            <a href="#">
+                                <i class="ti-layers-alt"></i>
+                                <span class="menu-text">Multi-Levels Menu</span>
+                            </a>
+                            <div class="subcat">
+                                <ul>
+                                    <li class="tier1">
+                                        <a href="javascript:;">Tier 1</a>
+                                        <div class="subcat">
+                                            <ul>
+                                                <li><a href="javascript:;">Level 2</a></li>
+                                                <li><a href="javascript:;">Level 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">Submenu</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">Submenu</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="">
+                            <a href="documentation.html">
+                                <i class="ti-agenda"></i>
+                                <span class="menu-text">Documentation</span>
+                                <span class="badge badge-pill badge-primary">New</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="ex_calendar.html">
+                                <i class="ti-calendar"></i>
+                                <span class="menu-text">Calendar</span>
+                                <span class="badge badge-pill badge-primary">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/siQuang/siqtheme" target="_blank">
+                                <i class="ti-github"></i>
+                                <span class="menu-text">Github/siQtheme</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+        </div>
+        <!-- EOF ASIDE-LEFT -->
+
+        <!-- BOF MAIN -->
+        <div class="main">
+
+            <!-- BOF Breadcrumb -->
+            <div class="row">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=""><i class="ti-home"></i> Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="">UI Elements</a></li>
+                        <li class="breadcrumb-item active">Fontawesome</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- EOF Breadcrumb -->
+
+            <!-- BOF MAIN-BODY -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header uppercase">
+                            <div class="caption text-primary">
+                                <i class="ti-briefcase"></i> Fontawesome 4.7.0
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p>Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow,
+                                    and anything that can be done with the power of CSS. Check out Fontawesome at <a href="https://fontawesome.com/v4.7.0/" target="_blank">https://fontawesome.com/v4.7.0/</a></p>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4> New Icons in 4.7.0 </h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-address-book"></i> address-book</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-address-book-o"></i> address-book-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-address-card"></i> address-card</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-address-card-o"></i> address-card-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bandcamp"></i> bandcamp</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bath"></i> bath</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bathtub"></i> bathtub <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-drivers-license"></i> drivers-license <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-drivers-license-o"></i> drivers-license-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eercast"></i> eercast</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-envelope-open"></i> envelope-open</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-envelope-open-o"></i> envelope-open-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-etsy"></i> etsy</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-free-code-camp"></i> free-code-camp</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-grav"></i> grav</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-handshake-o"></i> handshake-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-id-badge"></i> id-badge</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-id-card"></i> id-card</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-id-card-o"></i> id-card-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-imdb"></i> imdb</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-linode"></i> linode</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-meetup"></i> meetup</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-microchip"></i> microchip</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-podcast"></i> podcast</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-quora"></i> quora</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ravelry"></i> ravelry</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-s15"></i> s15 <span class="text-muted">(alias)</span>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-shower"></i> shower</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-snowflake-o"></i> snowflake-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-superpowers"></i> superpowers</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-telegram"></i> telegram</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer"></i> thermometer <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-0"></i> thermometer-0 <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-1"></i> thermometer-1 <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-2"></i> thermometer-2 <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-3"></i> thermometer-3 <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-4"></i> thermometer-4 <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-empty"></i> thermometer-empty</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-full"></i> thermometer-full</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-half"></i> thermometer-half</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-quarter"></i> thermometer-quarter</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thermometer-three-quarters"></i>
+                                    thermometer-three-quarters</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-times-rectangle"></i> times-rectangle <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-times-rectangle-o"></i> times-rectangle-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-user-circle"></i> user-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-user-circle-o"></i> user-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-user-o"></i> user-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vcard"></i> vcard <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vcard-o"></i> vcard-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-window-close"></i> window-close</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-window-close-o"></i> window-close-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-window-maximize"></i> window-maximize</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-window-minimize"></i> window-minimize</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-window-restore"></i> window-restore</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wpexplorer"></i> wpexplorer</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4> New Icons in 4.3.0 </h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angellist"></i> fa-angellist</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-area-chart"></i> fa-area-chart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-at"></i> fa-at</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bell-slash"></i> fa-bell-slash</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bell-slash-o"></i> fa-bell-slash-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bicycle"></i> fa-bicycle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-binoculars"></i> fa-binoculars</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-birthday-cake"></i> fa-birthday-cake</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bus"></i> fa-bus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-calculator"></i> fa-calculator</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc"></i> fa-cc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-amex"></i> fa-cc-amex</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-discover"></i> fa-cc-discover</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-mastercard"></i> fa-cc-mastercard</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-paypal"></i> fa-cc-paypal</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-stripe"></i> fa-cc-stripe</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cc-visa"></i> fa-cc-visa</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-copyright"></i> fa-copyright</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eyedropper"></i> fa-eyedropper</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-futbol-o"></i> fa-futbol-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-google-wallet"></i> fa-google-wallet</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ils"></i> fa-ils</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ioxhost"></i> fa-ioxhost</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-lastfm"></i> fa-lastfm</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-lastfm-square"></i> fa-lastfm-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-line-chart"></i> fa-line-chart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-meanpath"></i> fa-meanpath</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-newspaper-o"></i> fa-newspaper-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paint-brush"></i> fa-paint-brush</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paypal"></i> fa-paypal</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pie-chart"></i> fa-pie-chart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plug"></i> fa-plug</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-shekel"></i> fa-shekel <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sheqel"></i> fa-sheqel <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-slideshare"></i> fa-slideshare</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-soccer-ball-o"></i> fa-soccer-ball-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-off"></i> fa-toggle-off</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-on"></i> fa-toggle-on</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-trash"></i> fa-trash</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tty"></i> fa-tty</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-twitch"></i> fa-twitch</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wifi"></i> fa-wifi</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-yelp"></i> fa-yelp</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4> New Icons in 4.1.0 </h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rub"></i> fa-rub</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ruble"></i> fa-ruble <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rouble"></i> fa-rouble <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pagelines"></i> fa-pagelines</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stack-exchange"></i> fa-stack-exchange</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-right"></i> fa-arrow-circle-o-right
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-left"></i> fa-arrow-circle-o-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-left"></i> fa-caret-square-o-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-left"></i> fa-toggle-left <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dot-circle-o"></i> fa-dot-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wheelchair"></i> fa-wheelchair</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vimeo-square"></i> fa-vimeo-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-try"></i> fa-try</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square-o"></i> fa-plus-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-automobile"></i> fa-automobile <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bank"></i> fa-bank <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-behance"></i> fa-behance</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-behance-square"></i> fa-behance-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bomb"></i> fa-bomb</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-building"></i> fa-building</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cab"></i> fa-cab <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-car"></i> fa-car</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-child"></i> fa-child</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle-o-notch"></i> fa-circle-o-notch</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle-thin"></i> fa-circle-thin</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-codepen"></i> fa-codepen</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cube"></i> fa-cube</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cubes"></i> fa-cubes</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-database"></i> fa-database</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-delicious"></i> fa-delicious</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-deviantart"></i> fa-deviantart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-digg"></i> fa-digg</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-drupal"></i> fa-drupal</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-empire"></i> fa-empire</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-envelope-square"></i> fa-envelope-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fax"></i> fa-fax</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-archive-o"></i> fa-file-archive-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-audio-o"></i> fa-file-audio-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-code-o"></i> fa-file-code-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-excel-o"></i> fa-file-excel-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-image-o"></i> fa-file-image-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-movie-o"></i> fa-file-movie-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-pdf-o"></i> fa-file-pdf-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-photo-o"></i> fa-file-photo-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-picture-o"></i> fa-file-picture-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-powerpoint-o"></i> fa-file-powerpoint-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-sound-o"></i> fa-file-sound-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-video-o"></i> fa-file-video-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-word-o"></i> fa-file-word-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-zip-o"></i> fa-file-zip-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ge"></i> fa-ge <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-git"></i> fa-git</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-git-square"></i> fa-git-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-google"></i> fa-google</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-graduation-cap"></i> fa-graduation-cap</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hacker-news"></i> fa-hacker-news</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-header"></i> fa-header</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-history"></i> fa-history</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-institution"></i> fa-institution <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-joomla"></i> fa-joomla</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-jsfiddle"></i> fa-jsfiddle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-language"></i> fa-language</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-life-bouy"></i> fa-life-bouy <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-life-ring"></i> fa-life-ring</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-life-saver"></i> fa-life-saver <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mortar-board"></i> fa-mortar-board <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-openid"></i> fa-openid</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paper-plane"></i> fa-paper-plane</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paper-plane-o"></i> fa-paper-plane-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paragraph"></i> fa-paragraph</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paw"></i> fa-paw</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pied-piper"></i> fa-pied-piper</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pied-piper-alt"></i> fa-pied-piper-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pied-piper-square"></i> fa-pied-piper-square <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-qq"></i> fa-qq</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ra"></i> fa-ra <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rebel"></i> fa-rebel</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-recycle"></i> fa-recycle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-reddit"></i> fa-reddit</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-reddit-square"></i> fa-reddit-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-send"></i> fa-send <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-send-o"></i> fa-send-o <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-share-alt"></i> fa-share-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-share-alt-square"></i> fa-share-alt-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-slack"></i> fa-slack</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sliders"></i> fa-sliders</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-soundcloud"></i> fa-soundcloud</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-space-shuttle"></i> fa-space-shuttle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-spoon"></i> fa-spoon</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-spotify"></i> fa-spotify</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-steam"></i> fa-steam</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-steam-square"></i> fa-steam-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stumbleupon"></i> fa-stumbleupon</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stumbleupon-circle"></i> fa-stumbleupon-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-support"></i> fa-support <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-taxi"></i> fa-taxi</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tencent-weibo"></i> fa-tencent-weibo</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tree"></i> fa-tree</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-university"></i> fa-university</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vine"></i> fa-vine</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wechat"></i> fa-wechat <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-weixin"></i> fa-weixin</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wordpress"></i> fa-wordpress</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-yahoo"></i> fa-yahoo</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Web Applications</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-adjust"></i> fa-adjust</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-anchor"></i> fa-anchor</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-archive"></i> fa-archive</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows"></i> fa-arrows</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-h"></i> fa-arrows-h</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-v"></i> fa-arrows-v</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-asterisk"></i> fa-asterisk</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ban"></i> fa-ban</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bar-chart-o"></i> fa-bar-chart-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-barcode"></i> fa-barcode</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bars"></i> fa-bars</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-beer"></i> fa-beer</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bell"></i> fa-bell</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bell-o"></i> fa-bell-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bolt"></i> fa-bolt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-book"></i> fa-book</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bookmark"></i> fa-bookmark</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bookmark-o"></i> fa-bookmark-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-briefcase"></i> fa-briefcase</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bug"></i> fa-bug</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-building-o"></i> fa-building-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bullhorn"></i> fa-bullhorn</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bullseye"></i> fa-bullseye</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-calendar"></i> fa-calendar</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-calendar-o"></i> fa-calendar-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-camera"></i> fa-camera</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-camera-retro"></i> fa-camera-retro</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-down"></i> fa-caret-square-o-down
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-left"></i> fa-caret-square-o-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-right"></i> fa-caret-square-o-right
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-up"></i> fa-caret-square-o-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-certificate"></i> fa-certificate</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check"></i> fa-check</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-circle"></i> fa-check-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-circle-o"></i> fa-check-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-square"></i> fa-check-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-square-o"></i> fa-check-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle"></i> fa-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle-o"></i> fa-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-clock-o"></i> fa-clock-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cloud"></i> fa-cloud</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cloud-download"></i> fa-cloud-download</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cloud-upload"></i> fa-cloud-upload</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-code"></i> fa-code</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-code-fork"></i> fa-code-fork</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-coffee"></i> fa-coffee</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cog"></i> fa-cog</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cogs"></i> fa-cogs</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-comment"></i> fa-comment</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-comment-o"></i> fa-comment-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-comments"></i> fa-comments</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-comments-o"></i> fa-comments-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-compass"></i> fa-compass</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-credit-card"></i> fa-credit-card</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-crop"></i> fa-crop</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-crosshairs"></i> fa-crosshairs</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cutlery"></i> fa-cutlery</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dashboard"></i> fa-dashboard <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-desktop"></i> fa-desktop</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dot-circle-o"></i> fa-dot-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-download"></i> fa-download</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-edit"></i> fa-edit <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ellipsis-h"></i> fa-ellipsis-h</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ellipsis-v"></i> fa-ellipsis-v</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-envelope"></i> fa-envelope</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-envelope-o"></i> fa-envelope-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eraser"></i> fa-eraser</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-exchange"></i> fa-exchange</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-exclamation"></i> fa-exclamation</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-exclamation-circle"></i> fa-exclamation-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-exclamation-triangle"></i> fa-exclamation-triangle
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-external-link"></i> fa-external-link</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-external-link-square"></i> fa-external-link-square
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eye"></i> fa-eye</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eye-slash"></i> fa-eye-slash</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-female"></i> fa-female</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fighter-jet"></i> fa-fighter-jet</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-film"></i> fa-film</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-filter"></i> fa-filter</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fire"></i> fa-fire</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fire-extinguisher"></i> fa-fire-extinguisher</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flag"></i> fa-flag</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flag-checkered"></i> fa-flag-checkered</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flag-o"></i> fa-flag-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flash"></i> fa-flash <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flask"></i> fa-flask</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-folder"></i> fa-folder</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-folder-o"></i> fa-folder-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-folder-open"></i> fa-folder-open</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-folder-open-o"></i> fa-folder-open-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-frown-o"></i> fa-frown-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gamepad"></i> fa-gamepad</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gavel"></i> fa-gavel</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gear"></i> fa-gear <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gears"></i> fa-gears <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gift"></i> fa-gift</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-glass"></i> fa-glass</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-globe"></i> fa-globe</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-group"></i> fa-group <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hdd-o"></i> fa-hdd-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-headphones"></i> fa-headphones</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-heart"></i> fa-heart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-heart-o"></i> fa-heart-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-home"></i> fa-home</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-inbox"></i> fa-inbox</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-info"></i> fa-info</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-info-circle"></i> fa-info-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-key"></i> fa-key</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-keyboard-o"></i> fa-keyboard-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-laptop"></i> fa-laptop</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-leaf"></i> fa-leaf</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-legal"></i> fa-legal <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-lemon-o"></i> fa-lemon-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-level-down"></i> fa-level-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-level-up"></i> fa-level-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-lightbulb-o"></i> fa-lightbulb-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-location-arrow"></i> fa-location-arrow</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-lock"></i> fa-lock</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-magic"></i> fa-magic</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-magnet"></i> fa-magnet</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mail-forward"></i> fa-mail-forward <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mail-reply"></i> fa-mail-reply <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mail-reply-all"></i> fa-mail-reply-all</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-male"></i> fa-male</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-map-marker"></i> fa-map-marker</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-meh-o"></i> fa-meh-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-microphone"></i> fa-microphone</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-microphone-slash"></i> fa-microphone-slash</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus"></i> fa-minus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus-circle"></i> fa-minus-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus-square"></i> fa-minus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus-square-o"></i> fa-minus-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mobile"></i> fa-mobile</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-mobile-phone"></i> fa-mobile-phone <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-money"></i> fa-money</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-moon-o"></i> fa-moon-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-music"></i> fa-music</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pencil"></i> fa-pencil</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pencil-square"></i> fa-pencil-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pencil-square-o"></i> fa-pencil-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-phone"></i> fa-phone</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-phone-square"></i> fa-phone-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-picture-o"></i> fa-picture-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plane"></i> fa-plane</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus"></i> fa-plus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-circle"></i> fa-plus-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square"></i> fa-plus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square-o"></i> fa-plus-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-power-off"></i> fa-power-off</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-print"></i> fa-print</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-puzzle-piece"></i> fa-puzzle-piece</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-qrcode"></i> fa-qrcode</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-question"></i> fa-question</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-question-circle"></i> fa-question-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-quote-left"></i> fa-quote-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-quote-right"></i> fa-quote-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-random"></i> fa-random</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-refresh"></i> fa-refresh</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-reply"></i> fa-reply</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-reply-all"></i> fa-reply-all</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-retweet"></i> fa-retweet</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-road"></i> fa-road</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rocket"></i> fa-rocket</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rss"></i> fa-rss</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rss-square"></i> fa-rss-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-search"></i> fa-search</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-search-minus"></i> fa-search-minus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-search-plus"></i> fa-search-plus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-share"></i> fa-share</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-share-square"></i> fa-share-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-share-square-o"></i> fa-share-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-shield"></i> fa-shield</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-shopping-cart"></i> fa-shopping-cart</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sign-in"></i> fa-sign-in</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sign-out"></i> fa-sign-out</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-signal"></i> fa-signal</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sitemap"></i> fa-sitemap</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-smile-o"></i> fa-smile-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort"></i> fa-sort</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-alpha-asc"></i> fa-sort-alpha-asc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-alpha-desc"></i> fa-sort-alpha-desc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-amount-asc"></i> fa-sort-amount-asc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-amount-desc"></i> fa-sort-amount-desc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-asc"></i> fa-sort-asc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-desc"></i> fa-sort-desc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-down"></i> fa-sort-down <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-numeric-asc"></i> fa-sort-numeric-asc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-numeric-desc"></i> fa-sort-numeric-desc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sort-up"></i> fa-sort-up <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-spinner"></i> fa-spinner</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-square"></i> fa-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-square-o"></i> fa-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star"></i> fa-star</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star-half"></i> fa-star-half</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star-half-empty"></i> fa-star-half-empty <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star-half-full"></i> fa-star-half-full <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star-half-o"></i> fa-star-half-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-star-o"></i> fa-star-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-subscript"></i> fa-subscript</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-suitcase"></i> fa-suitcase</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-sun-o"></i> fa-sun-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-superscript"></i> fa-superscript</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tablet"></i> fa-tablet</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tachometer"></i> fa-tachometer</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tag"></i> fa-tag</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tags"></i> fa-tags</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tasks"></i> fa-tasks</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-terminal"></i> fa-terminal</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thumb-tack"></i> fa-thumb-tack</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thumbs-down"></i> fa-thumbs-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thumbs-o-down"></i> fa-thumbs-o-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thumbs-o-up"></i> fa-thumbs-o-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-thumbs-up"></i> fa-thumbs-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ticket"></i> fa-ticket</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-times"></i> fa-times</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-times-circle"></i> fa-times-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-times-circle-o"></i> fa-times-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tint"></i> fa-tint</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-down"></i> fa-toggle-down <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-left"></i> fa-toggle-left <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-right"></i> fa-toggle-right <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-up"></i> fa-toggle-up <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-trash-o"></i> fa-trash-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-trophy"></i> fa-trophy</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-truck"></i> fa-truck</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-umbrella"></i> fa-umbrella</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-unlock"></i> fa-unlock</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-unlock-alt"></i> fa-unlock-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-unsorted"></i> fa-unsorted <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-upload"></i> fa-upload</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-user"></i> fa-user</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-users"></i> fa-users</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-video-camera"></i> fa-video-camera</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-volume-down"></i> fa-volume-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-volume-off"></i> fa-volume-off</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-volume-up"></i> fa-volume-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-warning"></i> fa-warning <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wheelchair"></i> fa-wheelchair</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wrench"></i> fa-wrench</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Form Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-square"></i> fa-check-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-check-square-o"></i> fa-check-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle"></i> fa-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-circle-o"></i> fa-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dot-circle-o"></i> fa-dot-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus-square"></i> fa-minus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-minus-square-o"></i> fa-minus-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square"></i> fa-plus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square-o"></i> fa-plus-square-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-square"></i> fa-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-square-o"></i> fa-square-o</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Text Editor Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-align-center"></i> fa-align-center</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-align-justify"></i> fa-align-justify</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-align-left"></i> fa-align-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-align-right"></i> fa-align-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bold"></i> fa-bold</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chain"></i> fa-chain <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chain-broken"></i> fa-chain-broken</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-clipboard"></i> fa-clipboard</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-columns"></i> fa-columns</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-copy"></i> fa-copy <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cut"></i> fa-cut <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dedent"></i> fa-dedent <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eraser"></i> fa-eraser</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file"></i> fa-file</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-o"></i> fa-file-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-text"></i> fa-file-text</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-file-text-o"></i> fa-file-text-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-files-o"></i> fa-files-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-floppy-o"></i> fa-floppy-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-font"></i> fa-font</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-indent"></i> fa-indent</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-italic"></i> fa-italic</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-link"></i> fa-link</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-list"></i> fa-list</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-list-alt"></i> fa-list-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-list-ol"></i> fa-list-ol</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-list-ul"></i> fa-list-ul</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-outdent"></i> fa-outdent</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paperclip"></i> fa-paperclip</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-paste"></i> fa-paste <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-repeat"></i> fa-repeat</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rotate-left"></i> fa-rotate-left <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rotate-right"></i> fa-rotate-right <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-save"></i> fa-save <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-scissors"></i> fa-scissors</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-strikethrough"></i> fa-strikethrough</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-table"></i> fa-table</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-text-height"></i> fa-text-height</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-text-width"></i> fa-text-width</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-th"></i> fa-th</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-th-large"></i> fa-th-large</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-th-list"></i> fa-th-list</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-underline"></i> fa-underline</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-undo"></i> fa-undo</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-unlink"></i> fa-unlink <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Currency Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bitcoin"></i> fa-bitcoin <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-btc"></i> fa-btc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-cny"></i> fa-cny <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dollar"></i> fa-dollar <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eur"></i> fa-eur</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-euro"></i> fa-euro <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gbp"></i> fa-gbp</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-inr"></i> fa-inr</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-jpy"></i> fa-jpy</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-krw"></i> fa-krw</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-money"></i> fa-money</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rmb"></i> fa-rmb <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rouble"></i> fa-rouble <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rub"></i> fa-rub</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ruble"></i> fa-ruble <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-rupee"></i> fa-rupee <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-try"></i> fa-try</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-turkish-lira"></i> fa-turkish-lira <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-usd"></i> fa-usd</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-won"></i> fa-won <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-yen"></i> fa-yen <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Directional Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-double-down"></i> fa-angle-double-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-double-left"></i> fa-angle-double-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-double-right"></i> fa-angle-double-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-double-up"></i> fa-angle-double-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-down"></i> fa-angle-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-left"></i> fa-angle-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-right"></i> fa-angle-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-angle-up"></i> fa-angle-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-down"></i> fa-arrow-circle-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-left"></i> fa-arrow-circle-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-down"></i> fa-arrow-circle-o-down
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-left"></i> fa-arrow-circle-o-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-right"></i> fa-arrow-circle-o-right
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-o-up"></i> fa-arrow-circle-o-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-right"></i> fa-arrow-circle-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-circle-up"></i> fa-arrow-circle-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-down"></i> fa-arrow-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-left"></i> fa-arrow-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-right"></i> fa-arrow-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrow-up"></i> fa-arrow-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows"></i> fa-arrows</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-alt"></i> fa-arrows-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-h"></i> fa-arrows-h</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-v"></i> fa-arrows-v</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-down"></i> fa-caret-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-left"></i> fa-caret-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-right"></i> fa-caret-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-down"></i> fa-caret-square-o-down
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-left"></i> fa-caret-square-o-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-right"></i> fa-caret-square-o-right
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-square-o-up"></i> fa-caret-square-o-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-caret-up"></i> fa-caret-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-circle-down"></i> fa-chevron-circle-down
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-circle-left"></i> fa-chevron-circle-left
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-circle-right"></i> fa-chevron-circle-right
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-circle-up"></i> fa-chevron-circle-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-down"></i> fa-chevron-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-left"></i> fa-chevron-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-right"></i> fa-chevron-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-chevron-up"></i> fa-chevron-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hand-o-down"></i> fa-hand-o-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hand-o-left"></i> fa-hand-o-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hand-o-right"></i> fa-hand-o-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hand-o-up"></i> fa-hand-o-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-long-arrow-down"></i> fa-long-arrow-down</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-long-arrow-left"></i> fa-long-arrow-left</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-long-arrow-right"></i> fa-long-arrow-right</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-long-arrow-up"></i> fa-long-arrow-up</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-down"></i> fa-toggle-down <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-left"></i> fa-toggle-left <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-right"></i> fa-toggle-right <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-toggle-up"></i> fa-toggle-up <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Media Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-arrows-alt"></i> fa-arrows-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-backward"></i> fa-backward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-compress"></i> fa-compress</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-eject"></i> fa-eject</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-expand"></i> fa-expand</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fast-backward"></i> fa-fast-backward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-fast-forward"></i> fa-fast-forward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-forward"></i> fa-forward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pause"></i> fa-pause</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-play"></i> fa-play</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-play-circle"></i> fa-play-circle</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-play-circle-o"></i> fa-play-circle-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-step-backward"></i> fa-step-backward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-step-forward"></i> fa-step-forward</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stop"></i> fa-stop</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-youtube-play"></i> fa-youtube-play</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Brand Icons</h4>
+                                    <div class="alert alert-success">
+                                        <ul>
+                                            <li>All brand icons are trademarks of their respective owners.</li>
+                                            <li>The use of these trademarks does not indicate endorsement of the trademark holder by Font
+                                                Awesome, nor vice versa.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-adn"></i> fa-adn</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-android"></i> fa-android</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-apple"></i> fa-apple</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bitbucket"></i> fa-bitbucket</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bitbucket-square"></i> fa-bitbucket-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-bitcoin"></i> fa-bitcoin <span
+                                        class="text-muted">(alias)</span></div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-btc"></i> fa-btc</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-css3"></i> fa-css3</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dribbble"></i> fa-dribbble</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-dropbox"></i> fa-dropbox</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-facebook"></i> fa-facebook</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-facebook-square"></i> fa-facebook-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-flickr"></i> fa-flickr</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-foursquare"></i> fa-foursquare</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-github"></i> fa-github</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-github-alt"></i> fa-github-alt</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-github-square"></i> fa-github-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-gittip"></i> fa-gittip</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-google-plus"></i> fa-google-plus</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-google-plus-square"></i> fa-google-plus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-html5"></i> fa-html5</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-instagram"></i> fa-instagram</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-linkedin"></i> fa-linkedin</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-linkedin-square"></i> fa-linkedin-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-linux"></i> fa-linux</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-maxcdn"></i> fa-maxcdn</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pagelines"></i> fa-pagelines</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pinterest"></i> fa-pinterest</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-pinterest-square"></i> fa-pinterest-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-renren"></i> fa-renren</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-skype"></i> fa-skype</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stack-exchange"></i> fa-stack-exchange</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stack-overflow"></i> fa-stack-overflow</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-trello"></i> fa-trello</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tumblr"></i> fa-tumblr</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-tumblr-square"></i> fa-tumblr-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-twitter"></i> fa-twitter</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-twitter-square"></i> fa-twitter-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vimeo-square"></i> fa-vimeo-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-vk"></i> fa-vk</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-weibo"></i> fa-weibo</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-windows"></i> fa-windows</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-xing"></i> fa-xing</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-xing-square"></i> fa-xing-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-youtube"></i> fa-youtube</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-youtube-play"></i> fa-youtube-play</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-youtube-square"></i> fa-youtube-square</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <h4>Medical Icons</h4>
+                                </div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-ambulance"></i> fa-ambulance</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-h-square"></i> fa-h-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-hospital-o"></i> fa-hospital-o</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-medkit"></i> fa-medkit</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-plus-square"></i> fa-plus-square</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-stethoscope"></i> fa-stethoscope</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-user-md"></i> fa-user-md</div>
+                                <div class="webfont col-md-3 col-sm-4"><i class="fa fa-wheelchair"></i> fa-wheelchair</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EOF MAIN-BODY -->
+
+        </div>
+        <!-- EOF MAIN -->
+
+        <!-- BOF FOOTER -->
+        <div class="footer">
+            <p class="text-center">
+                <a class="ml-2" href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="siQtheme License"></a>
+                <a class="ml-2" href="https://github.com/siQuang/siqtheme/releases" target="_blank"><img src="https://img.shields.io/github/release/siQuang/siqtheme.svg" alt="Github siQtheme"></a>
+                <a class="ml-2" href="https://www.npmjs.com/package/siqtheme" target="_blank"><img src="https://img.shields.io/npm/v/siqtheme/latest.svg" alt="NPM siQtheme"></a>
+            </p>
+
+            <p class="text-center">Copyright © 2019-2020 siQtheme by <a href="https://siquang.com" target="_blank">3M Square</a>. All rights reserved.</p>
+        </div>
+        
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- EOF FOOTER -->
+
+        <!-- BOF ASIDE-RIGHT -->
+        <div id="sidebar-right">
+            <div class="sidebar-right-container">
+
+                <!-- BOF TABS -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#tab-1" data-toggle="tab" class="nav-link active">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#tab-2" data-toggle="tab" class="nav-link">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#tab-3" data-toggle="tab" class="nav-link">Help</a>
+                    </li>
+                </ul>
+                <!-- EOF TABS -->
+
+                <!-- BOF TAB PANES -->
+                <div class="tab-content">
+                    <!-- BOF TAB-PANE #1 -->
+                    <div id="tab-1" class="tab-pane show active">
+                        <div class="pane-header">
+                            <h3><i class="ti-user"></i> User Panel</h3>
+                            <i class="fa fa-circle text-success"></i> <span class="profile-user">siQuang
+                                Humbleman</span>
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="card bg-transparent mb-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">My Theme</h5>
+                                        <div class="btn-group mb-2">
+                                            <button type="button" class="btn switch-theme btn-light" data-theme="theme-default">Light</button>
+                                            <button type="button" class="btn switch-theme btn-dark" data-theme="theme-dark">Dark</button>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">My Profile</h5>
+                                        <form class="form-update-profile">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Firstname:</label>
+                                                <div class="col">
+                                                    <input type="text" name="first_name" class="form-control-plaintext"
+                                                        value="siQuang">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Lastname:</label>
+                                                <div class="col">
+                                                    <input type="text" name="last_name" class="form-control-plaintext"
+                                                        value="Humbleman">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Email:</label>
+                                                <div class="col">
+                                                    <input type="text" name="email" class="form-control-plaintext"
+                                                        value="siquang@example.com">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Username:</label>
+                                                <div class="col">
+                                                    <input type="text" name="username" class="form-control-plaintext"
+                                                        value="siquang">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Password:</label>
+                                                <div class="col">
+                                                    <input type="password" name="password" class="form-control-plaintext"
+                                                        value="123456789">
+                                                </div>
+                                            </div>
+                                            <div class="col offset-md-4 pl-2">
+                                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">
+                                            Messages
+                                            <span class="badge badge-pill badge-info pull-right">4</span>
+                                        </h5>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-01.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Today 3:30 pm</small><br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-03.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Today 12:45 pm</small><br>
+                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                                ut aliquip aute irure dolor in.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-02.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Yesterday 5:20 pm</small><br>
+                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                                dolore eu fugiat nulla pariatur.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row">
+                                            <a href="#"><img src="assets/img/profile/profile-05.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Tuesday 2:20 pm</small><br>
+                                                Sunt in culpa qui officia deserunt mollit anim est laborum voluptate.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Upcoming Events</h5>
+                                        <p class="card-text">for Monday - February 25, 2019</p>
+                                        <div class="profile-calendar">
+                                            <table class="table table-bordered table-hover table-sm">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col">Schedule</th>
+                                                        <th scope="col">Events</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>All-day</td>
+                                                        <td><i class="fa fa-circle text-info"></i> Project concept</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10:00 am</td>
+                                                        <td><i class="fa fa-circle text-info"></i> Staff meeting</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2:50 pm</td>
+                                                        <td><i class="fa fa-circle text-warning"></i> Send out report
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4:30 pm</td>
+                                                        <td><i class="fa fa-circle text-danger"></i> Appointment with
+                                                            Tang</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #1 -->
+
+                    <!-- BOF TAB-PANE #2 -->
+                    <div id="tab-2" class="tab-pane">
+                        <div class="pane-header">
+                            <h3><i class="ti-settings"></i> Settings</h3>
+                            Application Settings
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="card bg-transparent mb-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h5 class="text-carolina"><i class="ti-user"></i> User Settings</h5>
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm">
+                                        Notifications
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm"> Dashboard
+                                        Graphs
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-on="Yes"
+                                            data-off="No"> Get Daily Feed
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="text-carolina"><i class="ti-world"></i> Global Settings</h5>
+                                        Global settings are only accessible by a super administrator or admin group.
+                                        These settings control the application globally.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Show Subscription
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm"> SMTP Server
+                                        <div class="row mt-3">
+                                            <div class="input-group input-group-sm col">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">SMTP</span>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-on="Yes"
+                                            data-off="No"> Send Out Daily Report
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Send Daily Cron Report
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Backup Database Daily
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #2 -->
+
+                    <!-- BOF TAB-PANE #3 -->
+                    <div id="tab-3" class="tab-pane">
+                        <div class="pane-header">
+                            <h3><i class="ti-agenda"></i> Help</h3>
+                            Frequently Asked Questions
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="accordion" id="faq-example">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#faq1">
+                                                Frequently Asked Question #1
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq1" class="collapse show" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq2">
+                                                Frequently Asked Question #2
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq2" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq3">
+                                                Frequently Asked Question #3
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq3" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq4">
+                                                Frequently Asked Question #4
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq4" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq5">
+                                                Frequently Asked Question #5
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq5" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq6">
+                                                Frequently Asked Question #6
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq6" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq7">
+                                                Frequently Asked Question #7
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq7" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #3 -->
+                </div>
+                <!-- EOF TAB PANES -->
+
+            </div>
+        </div>
+        <!-- EOF ASIDE-RIGHT -->
+
+        <div id="overlay"></div>
+
+    </div> <!-- END WRAPPER -->
+
+    <script src="assets/scripts/siqtheme.js"></script>
+</body>
+
+</html>

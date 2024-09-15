@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <title>Reklam Verisi Ekle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="dashboard.html">Ana Sayfaya Dön</a>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h4 class="card-title">Reklam Verisi Ekle</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="addPropertyForm" method="POST" action="add_property.php">
+                            <input type="hidden" id="brandId" name="brandId" value="">
+
+                            <div class="form-group">
+                                <label for="ay">Ay</label>
+                                <select class="form-control" id="ay" name="ay" required>
+                                    <option value="">Ay Seçin</option>
+                                    <option value="Ocak">Ocak</option>
+                                    <option value="Şubat">Şubat</option>
+                                    <option value="Mart">Mart</option>
+                                    <option value="Nisan">Nisan</option>
+                                    <option value="Mayıs">Mayıs</option>
+                                    <option value="Haziran">Haziran</option>
+                                    <option value="Temmuz">Temmuz</option>
+                                    <option value="Ağustos">Ağustos</option>
+                                    <option value="Eylül">Eylül</option>
+                                    <option value="Ekim">Ekim</option>
+                                    <option value="Kasım">Kasım</option>
+                                    <option value="Aralık">Aralık</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="yil">Yıl</label>
+                                <select class="form-control" id="yil" name="yil" required></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="googleHarcama">Google Harcama</label>
+                                <input type="number" class="form-control" id="googleHarcama" name="googleHarcama" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaHarcama">Meta Harcama</label>
+                                <input type="number" class="form-control" id="metaHarcama" name="metaHarcama" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiktokHarcama">Tiktok Harcama</label>
+                                <input type="number" class="form-control" id="tiktokHarcama" name="tiktokHarcama" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="googleReklamGeliri">Google Reklam Geliri</label>
+                                <input type="number" class="form-control" id="googleReklamGeliri" name="googleReklamGeliri" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaReklamGeliri">Meta Reklam Geliri</label>
+                                <input type="number" class="form-control" id="metaReklamGeliri" name="metaReklamGeliri" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiktokReklamGeliri">Tiktok Reklam Geliri</label>
+                                <input type="number" class="form-control" id="tiktokReklamGeliri" name="tiktokReklamGeliri" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organikGelir">Organik Gelir</label>
+                                <input type="number" class="form-control" id="organikGelir" name="organikGelir" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="satilanUrunAdedi">Satılan Ürün Adedi</label>
+                                <input type="number" class="form-control" id="satilanUrunAdedi" name="satilanUrunAdedi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="siparisSayisi">Alınan Sipariş Sayısı</label>
+                                <input type="number" class="form-control" id="siparisSayisi" name="siparisSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organikZiyaretci">Organik Ziyaretçi Sayısı</label>
+                                <input type="number" class="form-control" id="organikZiyaretci" name="organikZiyaretci" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaZiyaretci">Meta Ziyaretçi Sayısı</label>
+                                <input type="number" class="form-control" id="metaZiyaretci" name="metaZiyaretci" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="googleZiyaretci">Google Ziyaretçi Sayısı</label>
+                                <input type="number" class="form-control" id="googleZiyaretci" name="googleZiyaretci" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiktokZiyaretci">Tiktok Ziyaretçi Sayısı</label>
+                                <input type="number" class="form-control" id="tiktokZiyaretci" name="tiktokZiyaretci" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="googleSiparisSayisi">Google Sipariş Sayısı</label>
+                                <input type="number" class="form-control" id="googleSiparisSayisi" name="googleSiparisSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaSiparisSayisi">Meta Sipariş Sayısı</label>
+                                <input type="number" class="form-control" id="metaSiparisSayisi" name="metaSiparisSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiktokSiparisSayisi">Tiktok Sipariş Sayısı</label>
+                                <input type="number" class="form-control" id="tiktokSiparisSayisi" name="tiktokSiparisSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaSiparisUrunSayisi">Meta Reklamları Sipariş Ürünü Sayısı</label>
+                                <input type="number" class="form-control" id="metaSiparisUrunSayisi" name="metaSiparisUrunSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="googleSiparisUrunSayisi">Google Reklamları Sipariş Ürün Sayısı</label>
+                                <input type="number" class="form-control" id="googleSiparisUrunSayisi" name="googleSiparisUrunSayisi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiktokSiparisUrunSayisi">Tiktok Reklamları Sipariş Ürün Sayısı</label>
+                                <input type="number" class="form-control" id="tiktokSiparisUrunSayisi" name="tiktokSiparisUrunSayisi" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yilSelect = document.getElementById('yil');
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i >= 2000; i--) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                yilSelect.appendChild(option);
+            }
+            yilSelect.value = currentYear;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const brandId = urlParams.get('brandId');
+            document.getElementById('brandId').value = brandId;
+        });
+    </script>
+</body>
+</html>

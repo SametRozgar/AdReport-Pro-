@@ -1,0 +1,573 @@
+body.theme-dark {
+	color: $dark-font-color;
+	background: $dark-background-color;
+
+	hr {
+		border-top-color: rgba(73, 80, 87, 1);
+	}
+
+	// ---------------------------------------------
+	// Header
+	// ---------------------------------------------
+	.header {
+	    background-color: $dark-header-bg-color;
+
+	    > .header-bar {
+		    color: $dark-header-font-color;
+
+		    a {
+		    	color: $dark-header-font-color;
+		    }
+
+		    .navigation {
+				.navbar-search {
+					> .input-group {
+						.input-group-text {
+							border-left-color: $dark-header-border-color;
+							color: $color-gray-600;
+						}
+					}
+				}
+
+				.navbar-menu {
+					.menu-item {
+						.btn {
+							border-left: 1px solid $dark-header-border-color;
+
+							&:focus {
+								background: darken($dark-header-border-color, 15%);
+							}
+						}
+
+						> .dropdown-menu {
+							color: $dark-header-font-color;
+							background: $dark-header-bg-color;
+
+							li:not(.dropdown-header) {
+								background: lighten($dark-header-bg-color, 10%);
+
+								&:hover {
+									background: lighten($dark-header-bg-color, 15%);
+								}
+							}
+
+							&.dropdown-alert > li {
+								border-bottom: 1px solid $dark-header-bg-color;
+							}
+
+							&.dropdown-message {
+								> li:not(.dropdown-header) {
+									border-bottom: 1px solid $dark-header-bg-color;
+								}
+							}
+						}
+					}
+				}
+		    }
+	    }
+	}
+
+
+	// ---------------------------------------------
+	// Sidebar
+	// ---------------------------------------------
+	.sidebar {
+		color: $dark-sidebar-font-color;
+	    background-color: $dark-sidebar-bg-color;
+
+	    a {
+			color: $dark-sidebar-font-color;
+
+			&:hover {
+				color: $color-white;
+			}
+	    }
+
+	    .sidebar-menu {
+	    	.header-menu {
+	    		color: $dark-sidebar-header-menu-color;
+	    	}
+
+	    	.maincat {
+		    	&.active {
+	                .subcat {
+	                    background-color: darken($dark-sidebar-bg-color, 3%);
+	                }
+	            }
+			}
+
+			.tier1 {
+		    	&.active {
+	                .subcat {
+	                    background-color: darken($dark-sidebar-bg-color, 3%) !important;
+	                }
+	            }
+			}
+	    }
+	}
+
+	// ---------------------------------------------
+	// Sidebar Right
+	// ---------------------------------------------
+	#sidebar-right {
+	    background: $dark-sidebar-right-bg-color;
+	    box-shadow: $dark-sidebar-right-box-shadow;
+
+	    a:not([type="button"]):not(.btn) {
+
+	        &:hover {
+	            color: lighten($blue, 5%);
+	        }
+	    }
+
+	    .sidebar-right-container {
+	        ul.nav-tabs {
+	            li {
+	                a {
+	                    border-right: 1px solid $dark-sidebar-right-tab-active-bg;
+
+	                    &:not(.active) {
+	                        color: $dark-sidebar-right-tabs-font;
+	                        background: $dark-sidebar-right-tabs-bg;
+	                    }
+
+	                    &.active {
+	                        color: $dark-sidebar-right-tabs-font;
+	                        background: $dark-sidebar-right-tab-active-bg;
+	                    }
+	                }
+	            }
+	        }
+
+	        > .tab-content {
+	            .pane-header {
+	                color: $dark-sidebar-right-pane-header-font;
+	                background: $dark-sidebar-right-tab-active-bg;
+	            }
+	        }
+	    }
+	}
+
+	// ---------------------------------------------
+	// Main
+	// ---------------------------------------------
+	.main {
+	    background-color: $dark-main-bg-color;
+
+	    ol.breadcrumb {
+	    	border-bottom-color: $dark-breadcrumb-border-color;
+		}
+	}
+
+	// ---------------------------------------------
+	// Footer
+	// ---------------------------------------------
+	.footer {
+		background: $dark-footer-bg-color;;
+	}
+
+	// ---------------------------------------------
+	// Forms
+	// ---------------------------------------------
+	input, 
+	select, 
+	textarea,
+	.custom-file-label {
+		color: $color-gray-400;
+		background: $color-gray-800;
+		border-color: $color-gray-700;
+
+		&:focus {
+			color: $color-gray-400;
+			background: darken($color-gray-700, 3%);
+		}
+
+		&.form-control-plaintext {
+			background: transparent;
+			border: none;
+			
+			&:focus {
+				border: 1px solid lighten($blue, 20%);
+			}
+		}
+
+		&:disabled {
+			color: $color-gray-700;
+			border: none;
+			background: darken($color-gray-800, 5%);
+
+			&::placeholder {
+			  color: $color-gray-700 !important;
+			  opacity: 1; /* Firefox */
+			}
+
+			// Internet Explorer 10-11
+			&:-ms-input-placeholder { 
+			  color: $color-gray-700 !important;
+			}
+
+			// Microsoft Edge 
+			&::-ms-input-placeholder { 
+			  color: $color-gray-700 !important;
+			}
+		}
+	}
+
+	.form-control {
+		background-color: transparent;
+	}
+
+	.form-control-plaintext {
+		color: $dark-font-color;
+	}
+
+	.input-group-prepend,
+	.input-group-append {
+		.input-group-text {
+			color: $color-gray-300;
+			background: $color-gray-700;
+			border-color: $color-gray-700;
+		}
+	}
+
+	// ---------------------------------------------
+	// Cards
+	// ---------------------------------------------
+	.card {
+		background: $dark-card-bg;
+		border-color: rgba(73, 80, 87, 1);
+
+		.card-header {
+			border-bottom-color: rgba(73, 80, 87, 1);
+
+			.caption {
+				color: $dark-card-header-font;
+			}
+		}
+
+		&.card-tabs {
+			.nav-tabs .nav-link.active,
+			.nav-tabs .nav-item.show .nav-link {
+				color: $color-gray-400;
+				background-color: $dark-card-tabs-active;
+				border-color: $dark-card-tabs-active;
+				border-bottom-color: $dark-card-tabs-active;
+			}
+
+			.nav-tabs .nav-item .nav-link:hover {
+				border: 1px solid transparent;
+			}
+
+			.card-body {
+				background-color: $dark-card-tabs-active;
+			}
+		}
+
+		.card-footer {
+			border-top-color: rgba(73, 80, 87, 1);
+		}
+
+		.list-group {
+			.list-group-item {
+				border-color: rgba(73, 80, 87, 1);
+			}
+		}
+	}
+
+	@each $name, $color in $theme-colors {
+	    .card.card-#{$name} {
+	        color: color-yiq($color) !important;
+	        border-color: darken($color, 5%);
+	        background-color: $color;
+	    }
+
+	    .card.card-outline-#{$name} {
+	    	background: transparent;
+	    	border-color: $color;
+	    }
+	}
+
+	// ---------------------------------------------
+	// Modals
+	// ---------------------------------------------
+	.modal-content {
+		background-color: $color-gray-800;
+
+		.modal-header {
+			border-bottom-color: $color-gray-700;
+
+			.close {
+				color: $dark-font-color;
+				text-shadow: none;
+			}
+		}
+
+		// .modal-body {
+		// 	background-color: lighten($color-gray-800, 3%);
+		// }
+
+		.modal-footer {
+			border-top-color: $color-gray-700;
+		}
+	}
+
+	// ---------------------------------------------
+	// Tables
+	// ---------------------------------------------
+	.table {
+		color: $gray-300;
+	}
+	
+	.table-bordered {
+		border-color: $color-gray-500;
+	}
+
+	.table .thead-light th {
+		color: $color-gray-400;
+		background-color: $color-gray-800;
+	}
+
+	.table-bordered th,
+	.table-bordered td {
+		border-color: $color-gray-700;
+	}
+
+	.table tr.void.bg-light {
+		background-color: $color-gray-800 !important;
+	}
+
+	.table-hover tbody tr:hover {
+		color: $gray-500;
+	}
+
+	// ---------------------------------------------
+	// Borders
+	// ---------------------------------------------
+	.border,
+	.border-top,
+	.border-right,
+	.border-bottom,
+	.border-left {
+		border-color: $color-gray-800 !important;
+	}
+
+	// ---------------------------------------------
+	// Dropdown Menu
+	// ---------------------------------------------
+	.dropdown-menu {
+		background-color: $color-gray-700;
+		color: $color-gray-200;
+
+		.dropdown-item {
+			color: $color-gray-200;
+
+			&:hover {
+				background-color: $color-gray-600;
+			}
+		}
+
+		.dropdown-divider {
+			border-top: 1px solid $color-gray-600;
+		}
+	}
+
+	// ---------------------------------------------
+	// Bootstrap Datepicker
+	// ---------------------------------------------
+	.datepicker {
+		&.datepicker-dropdown {
+			&:before {
+				border-bottom: 7px solid transparent;
+			}
+			&:after {
+				border-bottom: 6px solid $color-gray-700;
+			}
+
+			&.datepicker-orient-top {
+				&:before {
+					border-top: 7px solid transparent;
+					border-bottom: 0;
+				}
+				&:after {
+					border-top: 6px solid $color-gray-700;
+					border-bottom: 0;
+				}
+			}
+		}
+
+		table tr td,
+		table tr th {
+			&:hover {
+				background-color: $color-gray-800;
+			}
+		}
+	}
+
+	// ---------------------------------------------
+	// Bootstrap Timepicker
+	// ---------------------------------------------
+	.bootstrap-timepicker-widget {
+		&.dropdown-menu:after {
+			border-bottom: 6px solid $color-gray-700;
+		}
+
+		&.timepicker-orient-bottom:before {
+			border-top: 7px solid $color-gray-700;
+		}
+
+		&.timepicker-orient-bottom:after {
+			border-top: 6px solid transparent;
+		}
+
+		table td a {
+			color: $color-gray-200;
+			border: none;
+
+			> span {
+				color: $color-gray-200;
+			}
+
+			&:hover {
+				background-color: $color-gray-800;
+			}
+		}
+	}
+
+	// ---------------------------------------------
+	// Datatables
+	// ---------------------------------------------
+	.dataTables_wrapper {
+		input, select, textarea {
+			color: color-yiq($color-gray-800);
+			border-color: $color-black;
+			background-color: $color-gray-800;
+		}
+
+		.table-bordered {
+			border-color: $color-gray-700;
+		}
+
+		.odd.selected,
+		.even.selected {
+			background-color: $color-black;
+		}
+
+		input,
+		select,
+		textarea {
+			border-color: $color-gray-900;
+			// padding: 4px;
+		}
+
+		.page-item {
+			.page-link {
+				color: color-yiq($color-gray-800);
+				background-color: $color-gray-800;
+				border-color: $color-black;
+			}
+
+			&.active {
+				.page-link {
+					color: color-yiq($color-gray-600);
+					background-color: $color-gray-600;
+					border-color: $color-black;
+				}
+			}
+		}
+	}
+
+	// ---------------------------------------------
+	// Bootstrap-select
+	// ---------------------------------------------
+	.bootstrap-select {
+		button.dropdown-toggle {
+			color: color-yiq($color-gray-800);
+			border-color: $color-black;
+			background-color: $color-gray-800;
+		}
+	}
+
+	// ---------------------------------------------
+	// Select2
+	// ---------------------------------------------
+	.select2-container--default,
+	.select2-selection--multiple {
+		background-color: transparent;
+		border-color: $color-gray-700;
+	}
+
+	.select2-container {
+		.select2-dropdown {
+			background-color: $color-gray-800;
+			border-color: $color-gray-700;
+		}
+	}
+
+	.select2-selection__rendered .select2-selection__choice {
+		background-color: $color-gray-700;
+	}
+
+	.select2-results {
+		.select2-results__option[aria-selected=true] {
+			background-color: $color-gray-700;
+		}
+	}
+
+	// ---------------------------------------------
+	// Summernote
+	// ---------------------------------------------
+	.note-editor {
+		&.note-frame {
+			border-color: $color-gray-700;
+
+			* {
+				color: $color-gray-300;
+			}
+		}
+
+		.note-toolbar {
+			border-bottom-color: $color-gray-700;
+			background-color: $color-gray-800;
+
+			.note-btn {
+				background-color: $color-gray-600;
+				border-color: $color-gray-800;
+			}
+		}
+
+		.note-editing-area {
+			.note-editable {
+				background-color: $color-gray-900;
+			}
+		}
+
+		output.note-status-output {
+			border-top-color: $color-gray-700;
+		}
+
+		.note-statusbar {
+			border-top-color: $color-gray-700;
+			background-color: $color-gray-900;
+		}
+
+		.note-dropdown-menu {
+			border-color: $color-gray-900;
+			background-color: $color-gray-800;
+
+			a.note-dropdown-item:hover {
+				background-color: $color-gray-900;
+			}
+
+			.note-palette {
+				button.btn {
+					background-color: $color-gray-900;
+
+					&:hover {
+						background-color: $color-gray-700;
+					}
+				}
+			}
+		}
+	}
+
+}

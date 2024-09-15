@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Background animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./uploads/bg6.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            animation: animateBg 10s linear infinite;
+        }
+
+        @keyframes animateBg {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+            overflow: hidden;
+        }
+
+        .brand-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .brand-card {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 5px;
+            overflow: hidden;
+            background: rgba(128, 128, 128, 0.2); /* Hafif gri arka plan rengi */
+            backdrop-filter: blur(3px); /* Blur efekti */
+            -webkit-backdrop-filter: blur(10px); /* Safari desteği için */
+            cursor: pointer;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekleyelim */
+        }
+
+        .brand-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Resmi kutucuğa sığacak şekilde ayarla */
+            background-color: rgba(255, 255, 255, 0.1); /* Arka planın hafif opak olması */
+        }
+
+        .brand-details {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Arka planı biraz daha koyu yapalım */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: none;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            transition: opacity 0.3s;
+            opacity: 0.9; /* Hafif opaklık ayarı */
+        }
+        
+        .navbar-lgo {
+            width: 150px !important; 
+        }
+
+        .brand-card.active ~ .brand-details {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img class="navbar-lgo" src="./uploads/logo.webp" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header" style="background-color: transparent;">
+                        <h4 class="card-title">Brands</h4>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addBrandModal">Add Brand</button>
+                    </div>
+                    <div class="card-body" style="background-color: transparent;">
+                        <div class="brand-container" id="brandsContainer">
+                            <!-- Brands will be added here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Brand Modal -->
+    <div class="modal fade" id="addBrandModal" tabindex="-1" role="dialog" aria-labelledby="addBrandModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBrandModalLabel">Add Brand</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="addBrandForm" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="brandName">Brand Name</label>
+                            <input type="text" class="form-control" id="brandName" name="brandName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brandPassword">Brand Password</label>
+                            <input type="text" class="form-control" id="brandPassword" name="brandPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brandLogo">Brand Logo</label>
+                            <input type="file" class="form-control-file" id="brandLogo" name="brandLogo" accept="image/*" required>
+                            <img id="logoPreview" src="#" alt="Brand Logo Preview" class="img-fluid mt-2" style="display:none;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('brandLogo').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const logoPreview = document.getElementById('logoPreview');
+                logoPreview.src = e.target.result;
+                logoPreview.style.display = 'block';
+            }
+            
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('addBrandForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('add_brand.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                loadBrands();
+                $('#addBrandModal').modal('hide');
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function loadBrands() {
+            fetch('get_brands.php')
+                .then(response => response.json())
+                .then(data => {
+                    const brandsContainer = document.getElementById('brandsContainer');
+                    brandsContainer.innerHTML = '';
+
+                    data.forEach(brand => {
+                        const brandElement = document.createElement('div');
+                        brandElement.className = 'brand-card';
+                        brandElement.innerHTML = `<img src="./uploads/${brand.logo}" class="brand-img" alt="${brand.name}">`;
+                        brandsContainer.appendChild(brandElement);
+
+                        const detailsElement = document.createElement('div');
+                        detailsElement.className = 'brand-details';
+                        detailsElement.innerHTML = `
+                            <div class="brand-name">${brand.name}</div>
+                            <p>Password: ${brand.password}</p>
+                            <button class="btn btn-primary addPropertyBtn" data-brand-id="${brand.id}">Rapor ekle</button>
+                            <button class="btn btn-info viewPropertiesBtn" data-brand-id="${brand.id}">Müşteri Dashboard</button>
+                        `;
+                        brandsContainer.appendChild(detailsElement);
+                    });
+
+                    // Dinamik olarak eklenen butonlar için olay dinleyicileri ekle
+                    document.querySelectorAll('.deleteBrandBtn').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const brandId = this.getAttribute('data-brand-id');
+                            if (confirm('Bu markayı silmek istediğinizden emin misiniz?')) {
+                                fetch('delete_brand.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({ id: brandId }),
+                                })
+                                .then(response => response.text())
+                                .then(data => {
+                                    alert(data);
+                                    loadBrands(); // Silme işleminden sonra markaları yeniden yükle
+                                })
+                                .catch(error => console.error('Error:', error));
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll('.addPropertyBtn').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const brandId = this.getAttribute('data-brand-id');
+                            window.location.href = `add_property.html?brandId=${brandId}`;
+                        });
+                    });
+
+                    // "View Properties" butonunun yönlendirme işlevini güncelle
+                    document.querySelectorAll('.viewPropertiesBtn').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const brandId = this.getAttribute('data-brand-id'); // Butondan brandId'yi al
+                            window.location.href = `index.html?brandId=${brandId}`; // Dinamik URL oluştur ve yönlendir
+                        });
+                    });
+
+                    // Marka detaylarını göstermek/gizlemek için tıklama olayını ekle
+                    document.querySelectorAll('.brand-card').forEach(card => {
+                        card.addEventListener('click', function(event) {
+                            event.stopPropagation(); // Olayın yukarıya taşmasını engelle
+                            const cardDetails = this.nextElementSibling;
+                            if (cardDetails && cardDetails.classList.contains('brand-details')) {
+                                document.querySelectorAll('.brand-details').forEach(details => {
+                                    if (details !== cardDetails) {
+                                        details.style.display = 'none';
+                                    }
+                                });
+                                cardDetails.style.display = cardDetails.style.display === 'block' ? 'none' : 'block';
+                            }
+                        });
+                    });
+
+                    // Detaylar dışında bir yere tıklanırsa detayları kapat
+                    document.addEventListener('click', function(event) {
+                        if (!event.target.closest('.brand-card, .brand-details')) {
+                            document.querySelectorAll('.brand-details').forEach(details => {
+                                details.style.display = 'none';
+                            });
+                        }
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Markaları ilk yükleme
+        loadBrands();
+    </script>
+</body>
+</html>

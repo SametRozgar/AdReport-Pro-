@@ -1,0 +1,30 @@
+/* dashboard.css */
+body {
+    background-color: #343a40; /* Dark background color */
+}
+
+.navbar-dark {
+    background-color: #007bff; /* Primary color for the navbar */
+}
+
+.card {
+    background-color: #495057; /* Darker background for cards */
+    border: none; /* Remove border */
+}
+
+.card-header {
+    background-color: #6c757d; /* Slightly lighter background for card header */
+}
+
+.modal-content {
+    background-color: #343a40; /* Dark background for modal */
+    color: #ffffff; /* Light text color */
+}
+
+.modal-header, .modal-footer {
+    background-color: #495057; /* Darker background for modal header and footer */
+}
+
+.btn-light {
+    color: #000; /* Dark text color for light buttons */
+}

@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Fee Bootstrap Admin Theme with Webpack and Laravel-Mix" />
+    <meta name="keywords" content="bootstrap, admin theme, admin dashboard, jquery, webpack, laravel-mix, template, responsive" />
+    <meta name="author" content="siQuang - Simon Nguyen" />
+
+    <title>Exen Online</title>
+
+    <link rel="stylesheet" href="assets/css/siqtheme.css">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/pages/dashboard1.css">
+    
+    
+      <style>
+        #dynamicYearChart {
+            height: 500px; /* Grafiğin yüksekliği */
+            max-height: 600px; /* Maksimum yükseklik (isteğe bağlı) */
+            width: 100%; /* Genişlik */
+        }
+        
+        
+        
+   /* Tema uyumlu ve genişliği tam olan grafik için CSS */
+        #dynamicYearChart {
+            width: 100%;
+            height: 500px;
+        }
+
+        #data-table-container {
+            margin: 20px auto;
+            width: 98%;
+        }
+
+        #data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #2d2f36;
+            color: #ffffff;
+        }
+
+        #data-table th, #data-table td {
+            border: 1px solid #444;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        #data-table th {
+            background-color: #444;
+            font-weight: bold;
+        }
+
+        #data-table tbody tr:nth-child(even) {
+            background-color: #3b3d46;
+        }
+
+        #data-table tbody tr:hover {
+            background-color: #575861;
+        }
+        
+          .brand
+          {
+              width:250px;
+          }
+          
+          
+          .sidebar-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu ul.submenu {
+    display: none; /* Alt menüler başlangıçta gizlenir */
+    margin-left: 20px; /* Alt menüleri içeri kaydır */
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar-menu .submenu {
+    background-color: #333; /* Alt menüler için arka plan rengi */
+}
+
+.sidebar-menu .submenu a {
+    padding-left: 30px; /* Alt menü öğelerini içeri kaydır */
+}
+
+.header-title {
+            text-align: center;
+            font-size: 1.5em;
+            color: #dcdcdc;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-bottom: 2px solid #444;
+        }
+        .chart-card {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            margin-top: 30px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+    
+    
+    
+</head>
+
+<body class="theme-dark">
+    <div class="grid-wrapper sidebar-bg bg1">
+
+        <!-- Theme switcher -->
+        <div id="theme-tab">
+            <div class="theme-tab-item switch-theme bg-white" data-theme="theme-default" data-toggle="tooltip" title="Light"></div>
+            <div class="theme-tab-item switch-theme bg-dark" data-theme="theme-dark" data-toggle="tooltip" title="Dark"></div>
+        </div>
+
+        <!-- BOF HEADER -->
+        <div class="header">
+            <div class="header-bar">
+                <div class="brand">
+                  
+                </div>
+                <div class="btn-toggle">
+                    <!-- <a href="#" class="toggle-sidebar-btn"><i class="ti-arrow-circle-left"></i></a> -->
+                    <a href="#" class="slide-sidebar-btn" style="display: none;"><i class="ti-menu"></i></a>
+                </div>
+                <div class="navigation d-flex">
+
+                    <!-- BOF Header Search -->
+                    <form class="navbar-search" role="search" method="post" action="#">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="ti-search"></i></div>
+                            </div>
+                            <input type="text" placeholder="Search for keywords" class="form-control" name="top-search"
+                                id="top-search">
+                        </div>
+                    </form>
+                    <!-- EOF Header Search -->
+
+                    <!-- BOF Header Nav -->
+                    <div class="navbar-menu d-flex">
+                        <div class="menu-item">
+                            <a href="#" class="btn" data-toggle="dropdown">
+                                <i class="ti-bell"></i>
+                                <span class="badge badge-pill badge-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-alert">
+                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comment-alt"></i> View
+                                        All Alerts <i class="ti-angle-right"></i></a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> New user registered <span>Just now</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-calendar-plus-o"></i> New event created <span>5 min
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-area-chart"></i> Report ready to download <span>1 day
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-bank"></i> Bill payment reminder <span>1 day
+                                            ago</span></a></li>
+                                <li><a href="#"><i class="fa fa-clock-o"></i> Staff meeting <span>3 days ago</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="btn" data-toggle="dropdown">
+                                <i class="ti-email"></i>
+                                <span class="badge badge-pill badge-success">7</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-message">
+                                <li class="dropdown-header text-center"><a href="#"><i class="ti-comments"></i> View All
+                                        Messages <i class="ti-angle-right"></i></a></li>
+                                <li>
+                                    <img src="assets/img/profile/profile-04.jpg">
+                                    <div class="message-row">
+                                        <small>24h ago</small>
+                                        <a href="#"><span class="message-user">Pear Appleton</span><br>
+                                            Staff meeting on Tuesday at 4PM, remember to set date</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-07.jpg">
+                                    <div class="message-row">
+                                        <small>2h ago</small>
+                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
+                                            RE: Remember to generate PNL for October</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-06.jpg">
+                                    <div class="message-row">
+                                        <small>3d ago</small>
+                                        <a href="#"><span class="message-user">Lemony Tang</span><br>
+                                            Appointment with lawyer, better call Saul!</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/profile/profile-07.jpg">
+                                    <div class="message-row">
+                                        <small>4d ago</small>
+                                        <a href="#"><span class="message-user">siQuang Humbleman</span><br>
+                                            Theme designed by siQuang for siQthemes</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="btn right-sidebar-toggle"><i class="ti-user"></i></a>
+                        </div>
+                    </div>
+                    <!-- EOF Header Nav -->
+
+                </div>
+            </div>
+        </div>
+        <!-- EOF HEADER -->
+
+        <!-- BOF ASIDE-LEFT -->
+      <div id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- sidebar-menu  -->
+      <div class="sidebar-menu">
+    <ul>
+       <li class="active">
+    <a href="#" id="dynamicLink">
+        <i class="ti-dashboard"></i>
+        <span class="menu-text">Genel</span>
+    </a>
+        </li>
+        <li class="maincat">
+           
+            <!-- Yeni Reklam Menüsü ve Alt Seçenekler -->
+            <ul class="">
+                <li class="maincat">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="ti-bar-chart"></i>
+                        <span class="menu-text">Reklam</span>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="reklam_istatistik.html">
+                                <i class="ti-stats-up reklam-istatistik"></i>
+                                <span class="menu-text">Reklam İstatistik</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-receipt"></i>
+                                <span class="menu-text">Reklam Rapor</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="maincat">
+            <a href="#">
+                <i class="ti-palette"></i>
+                <span class="menu-text">Genel</span>
+            </a>
+        </li>
+        <li class="maincat">
+            <a href="#">
+                <i class="ti-layout-grid2"></i>
+                <span class="menu-text">Bilgiler</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+        <!-- sidebar-menu  -->
+    </div>
+</div>
+
+        <!-- EOF ASIDE-LEFT -->
+
+        <!-- BOF MAIN -->
+        <div class="main">
+
+            <!-- BOF Breadcrumb -->
+            <div class="row">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:;"><i class="ti-home"></i> Dashboard</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- EOF Breadcrumb -->
+
+     <div class="container">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<div class="container">
+    <div class="row">
+        <!-- Başlık Bölümü -->
+        <div class="col-md-12">
+            <h3 class="header-title">Yılbaşından itibaren toplam reklam platformu harcamalarının platformlara göre dağılımı</h3>
+        </div>
+    </div>
+
+    <!-- Grafiklerin Bulunduğu Satır -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 id="googleTitle" class="card-title">Google</h5>
+                    <p id="googleTotal" class="lead"></p>
+                    <canvas id="googleHarcamaChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 id="metaTitle" class="card-title">Meta</h5>
+                    <p id="metaTotal" class="lead"></p>
+                    <canvas id="metaHarcamaChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 id="tiktokTitle" class="card-title">Tiktok</h5>
+                    <p id="tiktokTotal" class="lead"></p>
+                    <canvas id="tiktokHarcamaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    
+    
+   <div class="container">
+    <!-- Ziyaretçi Dağılımı Başlığı -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="header-title">Yılbaşından itibaren platformlardan gelen reklam ziyaretçisinin platformlara göre dağılımı</h3>
+        </div>
+    </div>
+
+    <!-- Ziyaretçi Dağılımı Grafiklerinin Bulunduğu Satır -->
+    <div class="row chart-container">
+        <div class="col-md-4">
+            <div class="chart-card">
+                <h5 id="googleZiyaretciTitle" class="card-title">Google</h5>
+                <p id="googleZiyaretciTotal" class="lead"></p>
+                <canvas id="googleZiyaretciChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="chart-card">
+                <h5 id="metaZiyaretciTitle" class="card-title">Meta</h5>
+                <p id="metaZiyaretciTotal" class="lead"></p>
+                <canvas id="metaZiyaretciChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="chart-card">
+                <h5 id="tiktokZiyaretciTitle" class="card-title">Tiktok</h5>
+                <p id="tiktokZiyaretciTotal" class="lead"></p>
+                <canvas id="tiktokZiyaretciChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    
+    <div class="row chart-container">
+    <!-- Google Sipariş Kartı -->
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="googleSiparisTitle" class="card-title">Google Sipariş Sayısı</h5>   
+            <p id="googleSiparisTotal" class="lead"></p>
+            <canvas id="googleSiparisChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Meta Sipariş Kartı -->
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="metaSiparisTitle" class="card-title">Meta Sipariş Sayısı</h5>
+            <p id="metaSiparisTotal" class="lead"></p>
+            <canvas id="metaSiparisChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Tiktok Sipariş Kartı -->
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="tiktokSiparisTitle" class="card-title">Tiktok Sipariş Sayısı</h5>
+            <p id="tiktokSiparisTotal" class="lead"></p>
+            <canvas id="tiktokSiparisChart"></canvas>
+        </div>
+    </div>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <div class="row chart-container">
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="googleSiparisUrunTitle" class="card-title">Google Sipariş Ürün Sayısı</h5>   
+            <p id="googleSiparisUrunTotal" class="lead"></p>
+            <canvas id="googleSiparisUrunChart"></canvas>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="metaSiparisUrunTitle" class="card-title">Meta Sipariş Ürün Sayısı</h5>
+            <p id="metaSiparisUrunTotal" class="lead"></p>
+            <canvas id="metaSiparisUrunChart"></canvas>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="chart-card">
+            <h5 id="tiktokSiparisUrunTitle" class="card-title">Tiktok Sipariş Ürün Sayısı</h5>
+            <p id="tiktokSiparisUrunTotal" class="lead"></p>
+            <canvas id="tiktokSiparisUrunChart"></canvas>
+        </div>
+    </div>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="container">
+        <h2>Marka Verileri</h2>
+        <div class="table-container">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Ay</th>
+                        <th>Yıl</th>
+                        <th>Google Harcama</th>
+                        <th>Meta Harcama</th>
+                        <th>Tiktok Harcama</th>
+                        <th>Google Reklam Geliri</th>
+                        <th>Meta Reklam Geliri</th>
+                        <th>Tiktok Reklam Geliri</th>
+                        <th>Organik Gelir</th>
+                        <th>Satılan Ürün Adedi</th>
+                        <th>Sipariş Sayısı</th>
+                        <th>Organik Ziyaretçi</th>
+                        <th>Meta Ziyaretçi</th>
+                        <th>Google Ziyaretçi</th>
+                        <th>Tiktok Ziyaretçi</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body">
+                    <!-- Veriler buraya dinamik olarak yüklenecek -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          
+        <!-- EOF MAIN -->
+
+        <!-- BOF FOOTER -->
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- EOF FOOTER -->
+
+        <!-- BOF ASIDE-RIGHT -->
+        <div id="sidebar-right">
+            <div class="sidebar-right-container">
+
+                <!-- BOF TABS -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#tab-1" data-toggle="tab" class="nav-link active">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#tab-2" data-toggle="tab" class="nav-link">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#tab-3" data-toggle="tab" class="nav-link">Help</a>
+                    </li>
+                </ul>
+                <!-- EOF TABS -->
+
+                <!-- BOF TAB PANES -->
+                <div class="tab-content">
+                    <!-- BOF TAB-PANE #1 -->
+                    <div id="tab-1" class="tab-pane show active">
+                        <div class="pane-header">
+                            <h3><i class="ti-user"></i> User Panel</h3>
+                            <i class="fa fa-circle text-success"></i> <span class="profile-user">siQuang
+                                Humbleman</span>
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="card bg-transparent mb-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">My Theme</h5>
+                                        <div class="btn-group mb-2">
+                                            <button type="button" class="btn switch-theme btn-light" data-theme="theme-default">Light</button>
+                                            <button type="button" class="btn switch-theme btn-dark" data-theme="theme-dark">Dark</button>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">My Profile</h5>
+                                        <form class="form-update-profile">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Firstname:</label>
+                                                <div class="col">
+                                                    <input type="text" name="first_name" class="form-control-plaintext"
+                                                        value="siQuang">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Lastname:</label>
+                                                <div class="col">
+                                                    <input type="text" name="last_name" class="form-control-plaintext"
+                                                        value="Humbleman">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Email:</label>
+                                                <div class="col">
+                                                    <input type="text" name="email" class="form-control-plaintext"
+                                                        value="siquang@example.com">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Username:</label>
+                                                <div class="col">
+                                                    <input type="text" name="username" class="form-control-plaintext"
+                                                        value="siquang">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-md-4">Password:</label>
+                                                <div class="col">
+                                                    <input type="password" name="password" class="form-control-plaintext"
+                                                        value="123456789">
+                                                </div>
+                                            </div>
+                                            <div class="col offset-md-4 pl-2">
+                                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="mb-3">
+                                            Messages
+                                            <span class="badge badge-pill badge-info pull-right">4</span>
+                                        </h5>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-01.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Today 3:30 pm</small><br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-03.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Today 12:45 pm</small><br>
+                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                                ut aliquip aute irure dolor in.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row mb-3">
+                                            <a href="#"><img src="assets/img/profile/profile-02.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Yesterday 5:20 pm</small><br>
+                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                                dolore eu fugiat nulla pariatur.
+                                            </div>
+                                        </div>
+                                        <div class="message-group d-flex flex-row">
+                                            <a href="#"><img src="assets/img/profile/profile-05.jpg" class="rounded"
+                                                    alt="image"></a>
+                                            <div class="message-item">
+                                                <small class="text-carolina">Tuesday 2:20 pm</small><br>
+                                                Sunt in culpa qui officia deserunt mollit anim est laborum voluptate.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Upcoming Events</h5>
+                                        <p class="card-text">for Monday - February 25, 2019</p>
+                                        <div class="profile-calendar">
+                                            <table class="table table-bordered table-hover table-sm">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col">Schedule</th>
+                                                        <th scope="col">Events</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>All-day</td>
+                                                        <td><i class="fa fa-circle text-info"></i> Project concept</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10:00 am</td>
+                                                        <td><i class="fa fa-circle text-info"></i> Staff meeting</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2:50 pm</td>
+                                                        <td><i class="fa fa-circle text-warning"></i> Send out report
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4:30 pm</td>
+                                                        <td><i class="fa fa-circle text-danger"></i> Appointment with
+                                                            Tang</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #1 -->
+
+                    <!-- BOF TAB-PANE #2 -->
+                    <div id="tab-2" class="tab-pane">
+                        <div class="pane-header">
+                            <h3><i class="ti-settings"></i> Settings</h3>
+                            Application Settings
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="card bg-transparent mb-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h5 class="text-carolina"><i class="ti-user"></i> User Settings</h5>
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm">
+                                        Notifications
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm"> Dashboard
+                                        Graphs
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-on="Yes"
+                                            data-off="No"> Get Daily Feed
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5 class="text-carolina"><i class="ti-world"></i> Global Settings</h5>
+                                        Global settings are only accessible by a super administrator or admin group.
+                                        These settings control the application globally.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Show Subscription
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm"> SMTP Server
+                                        <div class="row mt-3">
+                                            <div class="input-group input-group-sm col">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">SMTP</span>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" checked data-toggle="toggle" data-size="sm" data-on="Yes"
+                                            data-off="No"> Send Out Daily Report
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Send Daily Cron Report
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="checkbox" data-toggle="toggle" data-size="sm" data-on="Yes" data-off="No">
+                                        Backup Database Daily
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #2 -->
+
+                    <!-- BOF TAB-PANE #3 -->
+                    <div id="tab-3" class="tab-pane">
+                        <div class="pane-header">
+                            <h3><i class="ti-agenda"></i> Help</h3>
+                            Frequently Asked Questions
+                            <span class="float-right"><a href="#" class="text-carolina">Log-Out</a></span>
+                        </div>
+                        <div class="pane-body">
+                            <div class="accordion" id="faq-example">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#faq1">
+                                                Frequently Asked Question #1
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq1" class="collapse show" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq2">
+                                                Frequently Asked Question #2
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq2" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq3">
+                                                Frequently Asked Question #3
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq3" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq4">
+                                                Frequently Asked Question #4
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq4" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq5">
+                                                Frequently Asked Question #5
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq5" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq6">
+                                                Frequently Asked Question #6
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq6" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#faq7">
+                                                Frequently Asked Question #7
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="faq7" class="collapse" data-parent="#faq-example">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                            synth nesciunt you probably haven't heard of them accusamus labore
+                                            sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EOF TAB-PANE #3 -->
+                </div>
+                <!-- EOF TAB PANES -->
+
+            </div>
+        </div>
+        <!-- EOF ASIDE-RIGHT -->
+
+        <div id="overlay"></div>
+
+    </div> <!-- END WRAPPER -->
+
+    <script src="assets/scripts/siqtheme.js"></script>
+    <script src="assets/scripts/pages/dashboard1.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    
+    
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId');
+
+    if (brandId) {
+        function fetchAndRenderData(brandId) {
+            fetch(`view_properties.php?brandId=${brandId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Harcama türlerinin toplamlarını hesaplayın
+                    const totalGoogleHarcama = data.properties.reduce((acc, val) => acc + parseFloat(val.google_harcama) || 0, 0);
+                    const totalMetaHarcama = data.properties.reduce((acc, val) => acc + parseFloat(val.meta_harcama) || 0, 0);
+                    const totalTiktokHarcama = data.properties.reduce((acc, val) => acc + parseFloat(val.tiktok_harcama) || 0, 0);
+
+                    // Renk tanımları
+                    const googleColor = '#FF6384';
+                    const metaColor = '#36A2EB';
+                    const tiktokColor = '#FFCE56';
+
+                    // Google Harcama Grafiği
+                    document.getElementById('googleTitle').style.color = googleColor;
+                    document.getElementById('googleTotal').style.color = googleColor;
+                    document.getElementById('googleTotal').innerText = `${totalGoogleHarcama.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}`;
+                    const googleCtx = document.getElementById('googleHarcamaChart').getContext('2d');
+                    new Chart(googleCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Google', 'Meta', 'Tiktok'],
+                            datasets: [{
+                                label: 'Harcama Dağılımı',
+                                data: [totalGoogleHarcama, totalMetaHarcama, totalTiktokHarcama],
+                                backgroundColor: [googleColor, metaColor, tiktokColor]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    labels: {
+                                        color: 'white',
+                                        usePointStyle: true,  // Dikdörtgen yerine yuvarlak simgeler kullan
+                                        pointStyle: 'circle'  // Simgelerin yuvarlak olmasını sağla
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Meta Harcama Grafiği
+                    document.getElementById('metaTitle').style.color = metaColor;
+                    document.getElementById('metaTotal').style.color = metaColor;
+                    document.getElementById('metaTotal').innerText = `${totalMetaHarcama.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}`;
+                    const metaCtx = document.getElementById('metaHarcamaChart').getContext('2d');
+                    new Chart(metaCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Google', 'Meta', 'Tiktok'],
+                            datasets: [{
+                                label: 'Harcama Dağılımı',
+                                data: [totalGoogleHarcama, totalMetaHarcama, totalTiktokHarcama],
+                                backgroundColor: [googleColor, metaColor, tiktokColor]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    labels: {
+                                        color: 'white',
+                                        usePointStyle: true,  // Dikdörtgen yerine yuvarlak simgeler kullan
+                                        pointStyle: 'circle'  // Simgelerin yuvarlak olmasını sağla
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Tiktok Harcama Grafiği
+                    document.getElementById('tiktokTitle').style.color = tiktokColor;
+                    document.getElementById('tiktokTotal').style.color = tiktokColor;
+                    document.getElementById('tiktokTotal').innerText = `${totalTiktokHarcama.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}`;
+                    const tiktokCtx = document.getElementById('tiktokHarcamaChart').getContext('2d');
+                    new Chart(tiktokCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Google', 'Meta', 'Tiktok'],
+                            datasets: [{
+                                label: 'Harcama Dağılımı',
+                                data: [totalGoogleHarcama, totalMetaHarcama, totalTiktokHarcama],
+                                backgroundColor: [googleColor, metaColor, tiktokColor]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    labels: {
+                                        color: 'white',
+                                        usePointStyle: true,  // Dikdörtgen yerine yuvarlak simgeler kullan
+                                        pointStyle: 'circle'  // Simgelerin yuvarlak olmasını sağla
+                                    }
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Veri çekme hatası:', error);
+                });
+        }
+
+        fetchAndRenderData(brandId);
+    } else {
+        console.error('Brand ID bulunamadı.');
+    }
+});
+
+
+
+  $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const brandId = urlParams.get('brandId');
+
+            if (brandId) {
+                fetch(`view_properties.php?brandId=${brandId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.properties) {
+                            const tbody = $('#data-table-body');
+                            tbody.empty(); // Mevcut içeriği temizle
+
+                            data.properties.forEach(property => {
+                                const row = `
+                                    <tr>
+                                        <td>${property.ay}</td>
+                                        <td>${property.yil}</td>
+                                        <td>${property.google_harcama}</td>
+                                        <td>${property.meta_harcama}</td>
+                                        <td>${property.tiktok_harcama}</td>
+                                        <td>${property.google_reklam_geliri}</td>
+                                        <td>${property.meta_reklam_geliri}</td>
+                                        <td>${property.tiktok_reklam_geliri}</td>
+                                        <td>${property.organik_gelir}</td>
+                                        <td>${property.satilan_urun_adedi}</td>
+                                        <td>${property.siparis_sayisi}</td>
+                                        <td>${property.organik_ziyaretci}</td>
+                                        <td>${property.meta_ziyaretci}</td>
+                                        <td>${property.google_ziyaretci}</td>
+                                        <td>${property.tiktok_ziyaretci}</td>
+                                    </tr>
+                                `;
+                                tbody.append(row);
+                            });
+                        } else {
+                            console.error('Veri bulunamadı veya hata oluştu:', data.error);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Veri çekme hatası:', error);
+                    });
+            } else {
+                console.error('Brand ID bulunamadı.');
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId');
+
+    if (brandId) {
+        fetch(`view_properties.php?brandId=${brandId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                    return;
+                }
+
+                // Marka logosunu ekleme
+                const brandDiv = document.querySelector('.brand');
+                const logoPath = data.brandLogo;
+                if (logoPath) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = logoPath;
+                    imgElement.alt = `${data.brandName} Logo`;
+                    imgElement.style.maxWidth = '100px'; // Görsel boyutunu ayarlamak için
+                    brandDiv.appendChild(imgElement);
+                }
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+            });
+    } else {
+        console.error('Brand ID bulunamadı.');
+    }
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId'); // Mevcut URL'den brandId'yi al
+
+    const dropdownToggles = document.querySelectorAll('.maincat > a');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            const submenu = parentLi.querySelector('.submenu');
+
+            if (submenu) {
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                parentLi.classList.toggle('active');
+            }
+        });
+    });
+
+    
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId'); // Mevcut URL'den brandId'yi al
+
+    // Reklam İstatistik linkini seç
+    const reklamIstatistikLink = document.querySelector('.reklam-istatistik');
+    if (reklamIstatistikLink && brandId) {
+        // Mevcut brandId'yi içeren URL'yi oluştur
+        const newUrl = `https://exenonline.com/reports/reklam_istatistik.html?brandId=${brandId}`;
+        reklamIstatistikLink.parentElement.href = newUrl; // href değerini güncelle
+    }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId');
+
+    if (brandId) {
+        fetch(`view_properties.php?brandId=${brandId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.properties) {
+                    console.error('Veriler alınamadı veya boş.');
+                    return;
+                }
+
+                // Ziyaretçi türlerinin toplamlarını hesaplayın
+                const totalGoogleZiyaretci = data.properties.reduce((acc, val) => acc + parseFloat(val.google_ziyaretci) || 0, 0);
+                const totalMetaZiyaretci = data.properties.reduce((acc, val) => acc + parseFloat(val.meta_ziyaretci) || 0, 0);
+                const totalTiktokZiyaretci = data.properties.reduce((acc, val) => acc + parseFloat(val.tiktok_ziyaretci) || 0, 0);
+
+                // Grafik başlıklarını ve toplamlarını ayarlama
+                document.getElementById('googleZiyaretciTitle').style.color = '#FF6384';
+                document.getElementById('googleZiyaretciTotal').innerText = `${totalGoogleZiyaretci.toLocaleString('tr-TR')} Ziyaretçi`;
+
+                document.getElementById('metaZiyaretciTitle').style.color = '#36A2EB';
+                document.getElementById('metaZiyaretciTotal').innerText = `${totalMetaZiyaretci.toLocaleString('tr-TR')} Ziyaretçi`;
+
+                document.getElementById('tiktokZiyaretciTitle').style.color = '#FFCE56';
+                document.getElementById('tiktokZiyaretciTotal').innerText = `${totalTiktokZiyaretci.toLocaleString('tr-TR')} Ziyaretçi`;
+
+                const chartData = {
+                    labels: ['Google', 'Meta', 'Tiktok'],
+                    datasets: [{
+                        data: [totalGoogleZiyaretci, totalMetaZiyaretci, totalTiktokZiyaretci],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                        hoverOffset: 4
+                    }]
+                };
+
+                const chartOptions = {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: 'white',
+                                usePointStyle: true,  // Dikdörtgen yerine yuvarlak simgeler kullan
+                                pointStyle: 'circle'  // Simgelerin yuvarlak olmasını sağla
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return `${tooltipItem.label}: ${tooltipItem.raw.toLocaleString('tr-TR')} Ziyaretçi`;
+                                }
+                            }
+                        }
+                    }
+                };
+
+                // Google Ziyaretçi Grafiği
+                const googleCtx = document.getElementById('googleZiyaretciChart').getContext('2d');
+                new Chart(googleCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                // Meta Ziyaretçi Grafiği
+                const metaCtx = document.getElementById('metaZiyaretciChart').getContext('2d');
+                new Chart(metaCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                // Tiktok Ziyaretçi Grafiği
+                const tiktokCtx = document.getElementById('tiktokZiyaretciChart').getContext('2d');
+                new Chart(tiktokCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+            });
+    } else {
+        console.error('Brand ID bulunamadı.');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId');
+
+    if (brandId) {
+        fetch(`siparis_sayisi.php?brandId=${brandId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.properties) {
+                    console.error('Veriler alınamadı veya boş.');
+                    return;
+                }
+
+                // Sipariş türlerinin toplamlarını çekin
+                const totalGoogleSiparis = parseFloat(data.properties.totalGoogleSiparis) || 0;
+                const totalMetaSiparis = parseFloat(data.properties.totalMetaSiparis) || 0;
+                const totalTiktokSiparis = parseFloat(data.properties.totalTiktokSiparis) || 0;
+
+                // Grafik başlıklarını ve toplamlarını ayarlama
+                document.getElementById('googleSiparisTitle').style.color = '#FF6384';
+                document.getElementById('googleSiparisTotal').innerText = `${totalGoogleSiparis.toLocaleString('tr-TR')} Sipariş`;
+
+                document.getElementById('metaSiparisTitle').style.color = '#36A2EB';
+                document.getElementById('metaSiparisTotal').innerText = `${totalMetaSiparis.toLocaleString('tr-TR')} Sipariş`;
+
+                document.getElementById('tiktokSiparisTitle').style.color = '#FFCE56';
+                document.getElementById('tiktokSiparisTotal').innerText = `${totalTiktokSiparis.toLocaleString('tr-TR')} Sipariş`;
+
+                const chartData = {
+                    labels: ['Google', 'Meta', 'Tiktok'],
+                    datasets: [{
+                        data: [totalGoogleSiparis, totalMetaSiparis, totalTiktokSiparis],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                        hoverOffset: 4
+                    }]
+                };
+
+                const chartOptions = {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: 'white',
+                                usePointStyle: true,
+                                pointStyle: 'circle'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return `${tooltipItem.label}: ${tooltipItem.raw.toLocaleString('tr-TR')} Sipariş`;
+                                }
+                            }
+                        }
+                    }
+                };
+
+                // Google Sipariş Grafiği
+                const googleCtx = document.getElementById('googleSiparisChart').getContext('2d');
+                new Chart(googleCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                // Meta Sipariş Grafiği
+                const metaCtx = document.getElementById('metaSiparisChart').getContext('2d');
+                new Chart(metaCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                // Tiktok Sipariş Grafiği
+                const tiktokCtx = document.getElementById('tiktokSiparisChart').getContext('2d');
+                new Chart(tiktokCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+            });
+    } else {
+        console.error('Brand ID bulunamadı.');
+    }
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get('brandId');
+
+    if (brandId) {
+        fetch(`siparis_urun_sayisi.php?brandId=${brandId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.properties) {
+                    console.error('Veriler alınamadı veya boş.');
+                    return;
+                }
+
+                const totalGoogleSiparisUrunSayisi = parseFloat(data.properties.totalGoogleSiparisUrunSayisi) || 0;
+                const totalMetaSiparisUrunSayisi = parseFloat(data.properties.totalMetaSiparisUrunSayisi) || 0;
+                const totalTiktokSiparisUrunSayisi = parseFloat(data.properties.totalTiktokSiparisUrunSayisi) || 0;
+
+                document.getElementById('googleSiparisUrunTotal').innerText = `${totalGoogleSiparisUrunSayisi.toLocaleString('tr-TR')} Ürün`;
+                document.getElementById('metaSiparisUrunTotal').innerText = `${totalMetaSiparisUrunSayisi.toLocaleString('tr-TR')} Ürün`;
+                document.getElementById('tiktokSiparisUrunTotal').innerText = `${totalTiktokSiparisUrunSayisi.toLocaleString('tr-TR')} Ürün`;
+
+                const chartData = {
+                    labels: ['Google', 'Meta', 'Tiktok'],
+                    datasets: [{
+                        data: [totalGoogleSiparisUrunSayisi, totalMetaSiparisUrunSayisi, totalTiktokSiparisUrunSayisi],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                        borderWidth: 1, // Kenar çizgileri grafikte kalacak
+                        hoverOffset: 4
+                    }]
+                };
+
+                const chartOptions = {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: 'white', // Font rengini beyaz yap
+                                usePointStyle: true, // Point style kullanarak yuvarlak ikonlar yapacağız
+                                pointStyle: 'circle', // Yuvarlak simgeler
+                                boxWidth: 10, // Simge boyutunu ayarlamak için
+                                borderWidth: 0 // Yuvarlak simgeler için kenarlıkları kaldır
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return `${tooltipItem.label}: ${tooltipItem.raw.toLocaleString('tr-TR')} Ürün`;
+                                }
+                            },
+                            bodyFont: {
+                                color: 'white' // Tooltip içindeki font rengini beyaz yap
+                            }
+                        }
+                    }
+                };
+
+                const googleCtx = document.getElementById('googleSiparisUrunChart').getContext('2d');
+                new Chart(googleCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                const metaCtx = document.getElementById('metaSiparisUrunChart').getContext('2d');
+                new Chart(metaCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+
+                const tiktokCtx = document.getElementById('tiktokSiparisUrunChart').getContext('2d');
+                new Chart(tiktokCtx, {
+                    type: 'doughnut',
+                    data: chartData,
+                    options: chartOptions
+                });
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+            });
+    } else {
+        console.error('Brand ID bulunamadı.');
+    }
+});
+
+
+
+
+  var currentUrl = new URL(window.location.href);
+
+    // URL'deki brandId parametresini al
+    var brandId = currentUrl.searchParams.get("brandId");
+
+    // Eğer brandId mevcutsa, yeni linki oluştur ve href'e ekle
+    if (brandId) {
+        var newUrl = `https://exenonline.com/reports/index.html?brandId=${brandId}`;
+        document.getElementById("dynamicLink").setAttribute("href", newUrl);
+    }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
